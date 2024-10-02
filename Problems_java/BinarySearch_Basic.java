@@ -1,6 +1,6 @@
 import java.util.*;
 
-// [ 이분탐색 기초 정리 ]
+// [ 이분탐색 - 기초 정리 ]
 // Arrays.binarySearch(배열, 찾을값)
 // Collections.binarySearch(리스트, 찾을값)
 // 배열(리스트)은 오름차순 정렬되어있어야 한다.
