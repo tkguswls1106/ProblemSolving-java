@@ -7,9 +7,16 @@ import java.util.*;
 // - 코드 특징 :
 // start 인덱스 대신 visited 배열을 운용함.
 
+// [ 조합 vs 중복조합 vs 순열 vs 중복순열 vs 부분집합 ]
+// - 조합 : start인덱스로 '앞에꺼 제외'해가면서 뽑기때문에, visited배열 필요없음. (순서X -> start인덱스 사용, 중복X -> start인덱스 사용, 뽑기개수O -> 재귀for문 사용)
+// - 중복조합 : start인덱스로 '앞에꺼 포함'해가면서 뽑기때문에, visited배열 필요없음. (순서X -> start인덱스 사용, 중복O -> start인덱스 방식변경사용, 뽑기개수O -> 재귀for문 사용)
+// - 순열 : visited배열로 뽑기여부 확인해가면서 뽑기때문에, start인덱스 필요없음. (순서O -> 그대로 사용, 중복X -> visited배열 사용, 뽑기개수O -> 재귀for문 사용)
+// - 중복순열 : 중복가능이므로 visited배열을 사용하지 않으며, start인덱스도 필요없음. (순서O -> 그대로 사용, 중복O -> visited배열 미사용, 뽑기개수O -> 재귀for문 사용)
+// - 부분집합 : visited배열과 start인덱스를 모두 운용하지 않으며, 재귀함수 내에서 for문을 사용하지않음. (뽑기개수X -> 재귀for문 미사용)
+
 public class Permutation_Basic {
     public static int n, m;  // 전체 개수, 선택 개수
-    public static int[] arr, visited;  // 전체 요소 배열, 방문여부 배열
+    public static int[] arr, visited;  // 전체 요소 배열, 방문(선택)여부 배열
     public static LinkedList<Integer> selected = new LinkedList<>();  // 선택 요소 리스트
     public static int answer = 0;  // 가능한 경우의 수
 
