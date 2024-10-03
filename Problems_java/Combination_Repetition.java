@@ -1,8 +1,14 @@
 import java.util.*;
 
 // [ 중복조합 (Combination with Repetition) ]
+// - 개념 특징 :
 // 중복조합이란 중복을 허용한채로 n개의 원소 중에서 r개를 뽑는 경우의 수를 의미한다.
+// 순서가 없게 뽑는 것은 일반적인 조합과 동일하지만, 같은 원소를 중복해서 뽑을 수 있다는 것에 차이가 있다.
 // 즉, 111,222,333 처럼 같은걸 여러번 뽑을 수 있다.
+// - 코드 특징 :
+// visited 배열 대신 start 인덱스를 운용함.
+// 재귀 파라미터에서 cnt를 cnt+1 해주는것은 일반적인 조합과 동일함.
+// 다만 차이점으로, 중복조합은 start 인덱스를 i+1 하지않음. (선택한 현재 원소를 포함하여 뒤의 것들까지 선택 가능.)
 
 public class Combination_Repetition {
     public static int n, m;  // 전체 개수, 선택 개수
@@ -19,7 +25,7 @@ public class Combination_Repetition {
 
         for(int i=start; i<n; i++) {
             selected.add(arr[i]);
-            comb(cnt+1, i);  // 일반적인 조합(Combination)과는 다르게, start 인덱스를 i+1 하지않음. (선택한 현재 원소를 포함하여 뒤의 것들까지 선택 가능.)
+            comb(cnt+1, i);  // 일반적인 조합과는 다르게, start 인덱스를 i+1 하지않음. (선택한 현재 원소를 포함하여 뒤의 것들까지 선택 가능.)
             
             selected.removeLast();
         }

@@ -1,8 +1,11 @@
 import java.util.*;
 
 // [ 순열(Permutation) - 기초 정리 ]
+// - 개념 특징 :
 // 순열이란 서로 다른 n개의 원소에서 r개를 뽑아 한 줄로 세우는 부분수열 경우의 수를 의미한다.
 // 이는 '조합처럼 순서가 바뀌면 경우의수로 인정안해주는것'과는 다르게 순서가 바뀌어도 인정된다.
+// - 코드 특징 :
+// start 인덱스 대신 visited 배열을 운용함.
 
 public class Permutation_Basic {
     public static int n, m;  // 전체 개수, 선택 개수
