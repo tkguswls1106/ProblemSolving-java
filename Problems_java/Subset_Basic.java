@@ -44,7 +44,7 @@ public class Subset_Basic {
         }
 
         sub(0);
-        System.out.printf("==> 가능한 경우의 수 : %d\n", answer);
+        System.out.printf("==> 가능한 경우의 수 : %d\n", answer);  // 2^n 값 출력됨.
     }
 }
 
