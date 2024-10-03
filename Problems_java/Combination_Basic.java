@@ -19,7 +19,7 @@ public class Combination_Basic {
 
         for(int i=start; i<n; i++) {
             selected.add(arr[i]);
-            comb(i+1, cnt+1);  // comb(start+1, cnt+1); 로 작성하면 틀림.
+            comb(i+1, cnt+1);  // comb(start+1, cnt+1); 로 작성하면 틀림. (선택한 현재 원소를 제외하고 뒤의 것들까지 선택 가능.)
             
             selected.removeLast();
         }
@@ -40,3 +40,15 @@ public class Combination_Basic {
         System.out.printf("==> 가능한 경우의 수 : %d\n", answer);
     }
 }
+
+/*
+< 출력 결과 >
+
+[1, 7]
+[1, 8]
+[1, 9]
+[7, 8]
+[7, 9]
+[8, 9]
+==> 가능한 경우의 수 : 6
+ */
