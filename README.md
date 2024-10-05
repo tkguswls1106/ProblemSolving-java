@@ -2,6 +2,7 @@
 ### Algorithm for CodingTest
 - C++에서 Java로 전환하는 과정으로, 복습이 포함되어 분량이 다소 적어보일 수 있음.
 - **기존 C++ Repo** : <a href="https://github.com/tkguswls1106/ProblemSolving-cpp">Click!</a>
+- **Java 정리 노트** : <a href="https://github.com/tkguswls1106/ProblemSolving-java/blob/master/java_notes.md">Click!</a>
 
 <br>
 
