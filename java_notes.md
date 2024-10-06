@@ -25,6 +25,7 @@
 import java.util.*;
 import java.io.*;
 import java.util.stream.*;  // Collectors
+import java.awt.*;  // Point
 ```
 
 ### 길이
@@ -580,6 +581,33 @@ for(String value : m.values()) {  // value
 ### PriorityQueue
 
 - C++과는 달리, 자바에서는 기본적으로 최소힙으로 구현됨.
+
+### Point
+
+- java.awt.Point 소속 클래스
+- int x, int y 를 담고있으며, 마치 Pair와 유사함.
+
+```java
+// 사용법
+Point p = new Point(3,5);
+int x = p.x;  // x좌표값 조회
+int y = p.y;  // y좌표값 조회
+
+// 응용 1 (ex. Point + Queue)
+Queue<Point> qu = new LinkedList<>();
+qu.offer(new Point(3,5));
+Point p = qu.poll();
+int x = p.x;
+int y = p.y;
+
+// 응용 2 (ex. Point + Array)
+Point[] arr = new Point[2];
+Point p1 = new Point(6,4);
+Point p2 = new Point(3,8);
+arr[0] = p1;
+arr[1] = p2;
+System.out.println(arr[0].x);
+```
 
 ### 진수 변환
 
