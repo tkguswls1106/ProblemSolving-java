@@ -545,8 +545,9 @@ for(String value : m.values()) {  // value
 
 ### Stack
 
+- `Stack<자료형> st = new Stack<>()` : 선언
 - `push()` : 삽입
-    - add() 가능하지만 push() 권장
+    - 대신 add()도 가능하지만, push() 권장
 - `peek()` : top 요소 반환
     - 비어있으면 에러 발생
 - `pop()` : top 요소 반환 및 제거
@@ -560,7 +561,13 @@ for(String value : m.values()) {  // value
 
 ### Queue
 
-- `add()` : 삽입
+- `Queue<자료형> qu = new LinkedList<>()` : 선언 방식 1
+    - 선언한 자료형만 삽입/삭제 가능
+- `Queue qu = new LinkedList()` : 선언 방식 2
+    - 어떤 자료형이든 삽입/삭제 가능 (ex. 이전에 int형을 넣었어도 String형 삽입 가능)
+- `offer()` : 삽입
+    - 크기 제한을 넘은 경우 false 반환
+    - 대신 add()도 가능하지만, 크기 제한을 넘은 경우 에러 발생
 - `peek()` : front 요소 반환
     - 비어있으면 null 반환
 - `poll()` : front 요소 반환 및 제거
