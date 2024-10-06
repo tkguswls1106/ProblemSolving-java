@@ -583,6 +583,22 @@ for(String value : m.values()) {  // value
 
 - C++과는 달리, 자바에서는 기본적으로 최소힙으로 구현됨.
 
+### Deque
+
+- `Deque<자료형> dq = new ArrayDeque<>()` : 선언
+- `offerFirst()` : 맨앞에 삽입
+    - 크기 제한을 넘은 경우 false 반환
+- `offerLast()` : 맨뒤에 삽입
+    - 크기 제한을 넘은 경우 false 반환
+- `pollFirst()` : 맨앞 제거 및 요소 반환
+    - 비어있으면 null 반환
+- `pollLast()` : 맨뒤 제거 및 요소 반환
+    - 비어있으면 null 반환
+- `peekFirst()` : 맨앞 요소 반환
+    - 비어있으면 null 반환
+- `peekLast()` : 맨뒤 요소 반환
+    - 비어있으면 null 반환
+
 ### Point
 
 - java.awt.Point 소속 클래스
