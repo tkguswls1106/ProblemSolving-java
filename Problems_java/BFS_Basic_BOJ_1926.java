@@ -40,7 +40,7 @@ public class BFS_Basic_BOJ_1926 {  // 주의사항: 백준 제출시엔 Main 클
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));  // bw는 안쓸만한 문제들도 있음. 상황에 맞추어 활용할것.
 
         // String nm = br.readLine();
         // String[] nmArr = nm.split(" ");
