@@ -1,7 +1,7 @@
 import java.util.*;
 import java.util.stream.*;  // Collectors
 
-// [ Pair 구현 및 커스텀 정렬 - 기초 정리 ]
+// [ Pair 구현 및 커스텀 정렬 ]
 
 class Solution {
     public static class Pair implements Comparable<Pair> {
@@ -13,7 +13,7 @@ class Solution {
             this.dist = dist;
         }
         
-        public int getNum() {
+        public int getNum() {  // 사실 이거 구현없이도, 그저 p.num으로도 조회 가능함.
             return num;
         }
         
@@ -39,7 +39,7 @@ class Solution {
         Collections.sort(pList);  // 커스텀 정렬됨.
         
         List<Integer> rankList = pList.stream()
-            .map(Pair::getNum)
+            .map(Pair::getNum)  // 또는 .map(p -> p.num)
             .collect(Collectors.toList());
         
         int[] answer = rankList.stream()

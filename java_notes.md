@@ -37,7 +37,8 @@ import java.awt.*;  // Point
 
 ### 입출력
 
-BufferedReader와 BufferedWriter 사용. (Scanner보다 성능이 좋음)
+BufferedReader와 BufferedWriter 사용. (Scanner보다 성능이 좋음)<br>
+만약 줄바꿈이 아닌 공백을 기준으로 입력받아야한다면, split 또는 StringTokenizer를 함께 활용할것.
 
 ```java
 public class Example {
@@ -47,13 +48,13 @@ public class Example {
 
         // 문자열로 읽고 출력하기
         String inputLine = br.readLine();
-        bw.write("입력 받은 문자열: " + inputLine);
+        bw.write("입력 받은 문자열: " + inputLine);  // write의 파라미터는 반드시 String일것.
 
-        // 숫자로 읽고 출력하기
+        // 숫자로 읽고 출력할것 버퍼에 담기 (아직 출력 X)
         int num = Integer.parseInt(br.readLine());
-        bw.write("입력 받은 숫자: " + num);
+        bw.write("입력 받은 숫자: " + num);  // write의 파라미터는 반드시 String일것.
 
-        // 버퍼 비우기 (버퍼에 남은것들 출력)
+        // 버퍼 비우기 (버퍼에 쌓인것들 출력)
         bw.flush();
 
         // 리소스 닫기
