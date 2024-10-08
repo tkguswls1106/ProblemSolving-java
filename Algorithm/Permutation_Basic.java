@@ -17,7 +17,7 @@ import java.util.*;
 public class Permutation_Basic {
     public static int n, m;  // 전체 개수, 선택 개수
     public static int[] arr, visited;  // 전체 요소 배열, 방문(선택)여부 배열
-    public static LinkedList<Integer> selected = new LinkedList<>();  // 선택 요소 리스트
+    public static List<Integer> selected = new ArrayList<>();  // 선택 요소 리스트
     public static int answer = 0;  // 가능한 경우의 수
 
     public static void perm(int cnt) {
@@ -34,7 +34,7 @@ public class Permutation_Basic {
             visited[i] = 1;
             perm(cnt+1);
             
-            selected.removeLast();
+            selected.remove(selected.size()-1);
             visited[i] = 0;
         }
     }

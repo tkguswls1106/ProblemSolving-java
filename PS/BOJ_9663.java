@@ -1,4 +1,5 @@
-// < 통과 방법 1 >
+// < 성공 방법 1 >
+// - 알고리즘: 백트래킹
 
 import java.util.*;
 import java.io.*;
@@ -51,7 +52,7 @@ public class BOJ_9663 {
 }
 
 /*
-// < 통과 방법 2 >
+// < 성공 방법 2 >
 
 import java.io.*;
 

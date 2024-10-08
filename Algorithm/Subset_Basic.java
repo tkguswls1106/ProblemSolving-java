@@ -20,7 +20,7 @@ import java.util.*;
 public class Subset_Basic {
     public static int n;  // 전체 개수
     public static int[] arr;  // 전체 요소 배열
-    public static LinkedList<Integer> selected = new LinkedList<>();  // 선택 요소 리스트
+    public static List<Integer> selected = new ArrayList<>();  // 선택 요소 리스트
     public static int answer = 0;  // 가능한 경우의 수
 
     public static void sub(int cnt) {
@@ -35,7 +35,7 @@ public class Subset_Basic {
         selected.add(arr[cnt]);  // 부분집합 코드에서는 cnt가 인덱스 역할도 하며 모든 원소를 넣고 빼봄.
         sub(cnt+1);
 
-        selected.removeLast();
+        selected.remove(selected.size()-1);
         sub(cnt+1);  // 부분집합은 여기서 한번더 호출함.
     }
 

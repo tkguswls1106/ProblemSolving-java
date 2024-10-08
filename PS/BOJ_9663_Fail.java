@@ -1,8 +1,12 @@
+// < 실패 방법 >
+// - 답은 맞는듯하나, 메모리 초과로 실패.
+// - 알고리즘: 백트래킹
+
 import java.util.*;
 import java.io.*;
 import java.awt.Point;
 
-public class BOJ_9663_Fail {  // 답은 맞는듯하나, 메모리 초과로 실패.
+public class BOJ_9663_Fail {
     public static int n;
     public static List<Point> queenList = new ArrayList<>();
     public static int answer = 0;

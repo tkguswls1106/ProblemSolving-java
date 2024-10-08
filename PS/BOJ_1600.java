@@ -1,6 +1,8 @@
 import java.util.*;
 import java.io.*;
 
+// - 알고리즘: BFS
+
 public class BOJ_1600 {
     public static int k, n, m;
     public static int[][] board = new int[202][202];
