@@ -438,21 +438,21 @@ Arrays.sort(arr);  // 또는 arr = Arrays.stream(arr).sorted().toArray();
 
 // 내림차순 정렬 (반환타입: Array)
 arr = Arrays.stream(arr)
-			.boxed()  // int[] -> Integer[] 변환
-			.sorted((a, b) -> b - a)  // 내림차순 정렬
-			.mapToInt(i->i)  // Integer[] -> int[] 변환
-			.toArray();  // int[]로 최종 리턴
+	    .boxed()  // int[] -> Integer[] 변환
+	    .sorted((a, b) -> b - a)  // 내림차순 정렬
+	    .mapToInt(i->i)  // Integer[] -> int[] 변환
+	    .toArray();  // int[]로 최종 리턴
 						
 // 중복 제거 (반환타입: Array)
 arr = Arrays.stream(arr)
-			.distinct()  // 중복제거 (boxed로 Interger[] 변환하는 절차 필요없음)
-			.toArray();  // int[]로 최종 리턴
+	    .distinct()  // 중복제거 (boxed로 Interger[] 변환하는 절차 필요없음)
+	    .toArray();  // int[]로 최종 리턴
 						
 // 중복 제거 & 정렬 (반환타입: Array)
 arr = Arrays.stream(arr)
-			.distinct()  // 중복제거 (boxed로 Interger[] 변환하는 절차 필요없음)
-			.sorted()  // 오름차순 정렬
-			.toArray();  // int[]로 최종 리턴
+	    .distinct()  // 중복제거 (boxed로 Interger[] 변환하는 절차 필요없음)
+	    .sorted()  // 오름차순 정렬
+	    .toArray();  // int[]로 최종 리턴
 ```
 
 - List&lt;Integer> - 정렬, 뒤집기, 중복제거
@@ -469,14 +469,14 @@ Collections.reverse(list);
 
 // 중복 제거 (반환타입: List)
 list = list.stream()
-		    .distinct()  // 중복제거
-			.collect(Collectors.toList());  // 가변 List<Integer>로 최종 리턴
+	   .distinct()  // 중복제거
+	   .collect(Collectors.toList());  // 가변 List<Integer>로 최종 리턴
 						
 // 중복 제거 & 정렬 (반환타입: List)
 list = list.stream()
-			.distinct()  // 중복제거
-			.sorted()  // 오름차순 정렬
-			.collect(Collectors.toList());  // 가변 List<Integer>로 최종 리턴
+	   .distinct()  // 중복제거
+	   .sorted()  // 오름차순 정렬
+	   .collect(Collectors.toList());  // 가변 List<Integer>로 최종 리턴
 ```
 
 - All - 기타 메소드
