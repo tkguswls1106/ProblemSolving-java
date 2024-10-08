@@ -53,6 +53,7 @@ public class BOJ_9663 {
 
 /*
 // < 성공 방법 2 >
+// - 알고리즘: 백트래킹
 
 import java.io.*;
 
