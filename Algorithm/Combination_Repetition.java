@@ -43,7 +43,7 @@ public class Combination_Repetition {
         arr = new int[n];
 
         // 입력
-        int[] inputArr = {1,7,8,9};  // 정렬되어있지않아도 상관없음.
+        int[] inputArr = {1,7,8,9};
         for(int i=0; i<n; i++) {
             int inputNum = inputArr[i];  // n번만큼 숫자를 입력받았다고 가정하고자 작성함.
             arr[i] = inputNum;

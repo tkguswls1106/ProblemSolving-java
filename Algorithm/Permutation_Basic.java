@@ -30,7 +30,8 @@ public class Permutation_Basic {
         for(int i=0; i<n; i++) {
             if(visited[i] == 1) continue;
 
-            // - Tip: 만약 문제에서 '수열을 오름차순으로 출력'하라고 명시했다면, 이 자리에 밑의 코드를 추가로 작성해주면 됨.
+            // - Tip: 만약 문제에서 '고른 수열은 오름차순이어야 한다'라고 명시되어있다면, 이 자리에 밑의 코드를 추가로 작성해주면 됨.
+            // '수열은 사전 순으로 증가하는 순서로 출력해야 한다'와는 다른 말이니 헷갈리지 말것!
             // if(!selected.isEmpty() && selected.get(selected.size()-1) > arr[i]) continue;  // 오름차순 수열이 아니라면 넘기기.
             
             selected.add(arr[i]);
@@ -48,7 +49,7 @@ public class Permutation_Basic {
         visited = new int[n];  // 자동으로 0으로 초기화.
 
         // 입력
-        int[] inputArr = {1,7,8,9};  // 정렬되어있지않아도 상관없음.
+        int[] inputArr = {1,7,8,9};
         for(int i=0; i<n; i++) {
             int inputNum = inputArr[i];  // n번만큼 숫자를 입력받았다고 가정하고자 작성함.
             arr[i] = inputNum;

@@ -121,13 +121,11 @@ public class Example {
 - 배열 ↔ 리스트 (with Stream)
     - 배열 (int[], Integer[]) → 리스트 (List&lt;Integer>)
         - `list = Arrays.stream(arr) ~`
-        - `~ .collect(Collectors.toList());`
+        - ? → List&lt;Integer> : `~ .collect(Collectors.toList());`
     - 리스트 (List&lt;Integer>) → 배열 (int[], Integer[])
         - `arr = list.stream() ~`
-        - List&lt;Integer>, Integer[] → int[]
-            - `~ .toArray();`
-        - List&lt;Integer>, int[] → Integer[]
-            - `~ .toArray(Integer[]::new);`
+        - ? → int[] : `~ .toArray();`
+        - ? → Integer[] : `~ .toArray(Integer[]::new);`
 - 기본형 배열 ↔ 참조형 리스트
     - 기본형 배열 (int[]) → 참조형 리스트 (List&lt;Integer>)
         - `Integer::valueOf`
@@ -416,25 +414,72 @@ while(stt.hasMoreTokens()) {  // (반환타입: boolean)
 - 리스트(List) : 크기 가변. 삽입/삭제 많은 경우 효과적
 - ArrayList 선언 : `List<Integer> list = new ArrayList<>();`
 - LinkedList 선언 : `LinkedList<Integer> list = new LinkedList<>();`
-- LinkedList vs ArrayList : LinkedList가 ArrayList보다 조회는 느리지만 삽입/삭제는 빠름
+- ArrayList vs LinkedList : LinkedList가 ArrayList보다 조회는 느리지만 삽입/삭제는 빠름
 
-### 정렬
+### Stream
 
-```java
-// 배열 오름차순 정렬
-Arrays.sort(arr);
-
-// 리스트 오름차순 정렬
-Collections.sort(list);
-
-// 리스트 내림차순 정렬
-Collections.sort(list, Collections.reverseOrder());
-
-// 리스트 뒤집기
-Collections.reverse(list);
-```
+- 주의사항
+    - 반환타입이 void가 아니므로, 반환값을 변수에 다시 재할당 해주어야함.
+- 스트림 호출 접두사
+    - int[], Integer[] → ?  : `Arrays.stream(arr) ~`
+    - List&lt;Integer> → ? : `list.stream() ~`
+- 스트림 반환 접미사
+    - ? → int[] : `~ .toArray();`
+    - ? → Integer[] : `~ .toArray(Integer[]::new);`
+    - ? → List&lt;Integer> : `~ .collect(Collectors.toList());`
 
 ### 메소드
+
+- int[] - 정렬, 중복제거
+
+```java
+// 오름차순 정렬 (반환타입: void)
+Arrays.sort(arr);  // 또는 arr = Arrays.stream(arr).sorted().toArray();
+
+// 내림차순 정렬 (반환타입: Array)
+arr = Arrays.stream(arr)
+			.boxed()  // int[] -> Integer[] 변환
+			.sorted((a, b) -> b - a)  // 내림차순 정렬
+			.mapToInt(i->i)  // Integer[] -> int[] 변환
+			.toArray();  // int[]로 최종 리턴
+						
+// 중복 제거 (반환타입: Array)
+arr = Arrays.stream(arr)
+			.distinct()  // 중복제거 (boxed로 Interger[] 변환하는 절차 필요없음)
+			.toArray();  // int[]로 최종 리턴
+						
+// 중복 제거 & 정렬 (반환타입: Array)
+arr = Arrays.stream(arr)
+			.distinct()  // 중복제거 (boxed로 Interger[] 변환하는 절차 필요없음)
+			.sorted()  // 오름차순 정렬
+			.toArray();  // int[]로 최종 리턴
+```
+
+- List&lt;Integer> - 정렬, 뒤집기, 중복제거
+
+```java
+// 오름차순 정렬 (반환타입: void)
+Collections.sort(list);
+
+// 내림차순 정렬 (반환타입: void)
+Collections.sort(list, Collections.reverseOrder());
+
+// 뒤집기 (반환타입: void)
+Collections.reverse(list);
+
+// 중복 제거 (반환타입: List)
+list = list.stream()
+		    .distinct()  // 중복제거
+			.collect(Collectors.toList());  // 가변 List<Integer>로 최종 리턴
+						
+// 중복 제거 & 정렬 (반환타입: List)
+list = list.stream()
+			.distinct()  // 중복제거
+			.sorted()  // 오름차순 정렬
+			.collect(Collectors.toList());  // 가변 List<Integer>로 최종 리턴
+```
+
+- All - 기타 메소드
 
 ```java
 // 리스트 내 요소 교환 (반환타입: void)
@@ -495,11 +540,8 @@ String[] arr = list.stream().toArray(String[]::new);  // 또는 list.toArray(new
     - 배열 : `System.out.println(Arrays.toString(arr));`
     - 리스트 : `System.out.println(list.toString());`
 - 메소드 호출
-    - 배열 : `Arrays.~(arr);`
-    - 리스트 : `Collections.~(list);`
-- 스트림 사용
-    - 배열  : `Arrays.stream(arr)`
-    - 리스트 : `list.stream()`
+    - 배열 : `Arrays.메소드(arr);`
+    - 리스트 : `Collections.메소드(list);`
 
 <br>
 
