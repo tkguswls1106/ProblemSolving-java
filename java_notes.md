@@ -438,20 +438,20 @@ Arrays.sort(arr);  // 또는 arr = Arrays.stream(arr).sorted().toArray();
 
 // 내림차순 정렬 (반환타입: Array)
 arr = Arrays.stream(arr)
-	    .boxed()  // int[] -> Integer[] 변환
-	    .sorted((a, b) -> b - a)  // 내림차순 정렬
-	    .mapToInt(i->i)  // Integer[] -> int[] 변환
+	    .boxed()  // int[] -> Integer[] 변환 (sorted 내림차순때만 필요)
+	    .sorted((a, b) -> b - a)  // 내림차순 정렬 (boxed 및 mapToInt 필요)
+	    .mapToInt(i->i)  // Integer[] -> int[] 변환 (sorted 내림차순때만 필요)
 	    .toArray();  // int[]로 최종 리턴
 						
 // 중복 제거 (반환타입: Array)
 arr = Arrays.stream(arr)
-	    .distinct()  // 중복제거 (boxed로 Interger[] 변환하는 절차 필요없음)
+	    .distinct()  // 중복제거
 	    .toArray();  // int[]로 최종 리턴
 						
 // 중복 제거 & 정렬 (반환타입: Array)
 arr = Arrays.stream(arr)
-	    .distinct()  // 중복제거 (boxed로 Interger[] 변환하는 절차 필요없음)
-	    .sorted()  // 오름차순 정렬
+	    .distinct()  // 중복제거
+	    .sorted()  // 오름차순 정렬 (boxed로 Interger[] 변환하는 절차 필요없음)
 	    .toArray();  // int[]로 최종 리턴
 ```
 
@@ -475,7 +475,7 @@ list = list.stream()
 // 중복 제거 & 정렬 (반환타입: List)
 list = list.stream()
 	   .distinct()  // 중복제거
-	   .sorted()  // 오름차순 정렬
+	   .sorted()  // 오름차순 정렬 (boxed로 Interger[] 변환하는 절차 필요없음)
 	   .collect(Collectors.toList());  // 가변 List<Integer>로 최종 리턴
 ```
 
