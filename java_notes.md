@@ -22,8 +22,8 @@
 ### import
 
 ```java
-import java.util.*;
-import java.io.*;
+import java.util.*;  // ArrayList, Scanner
+import java.io.*;  // BufferedReader
 import java.util.stream.*;  // Collectors
 import java.awt.*;  // Point
 ```
@@ -37,8 +37,28 @@ import java.awt.*;  // Point
 
 ### 입출력
 
-BufferedReader와 BufferedWriter 사용. (Scanner보다 성능이 좋음)<br>
+데이터의 양이 많을 경우, BufferedReader와 BufferedWriter 사용. (Scanner보다 성능이 좋음)
 만약 줄바꿈이 아닌 공백을 기준으로 입력받아야한다면, split 또는 StringTokenizer를 함께 활용할것.
+
+- Scanner & print
+
+```java
+// Scanner
+Scanner sc = new Scanner(System.in);
+String strLine = nextLine();  // 줄바꿈 기준 (띄어쓰기 X) - 한줄씩 문자열 입력
+String str = sc.next();  // 띄어쓰기 및 줄바꿈 기준 - 문자열 입력
+int num1 = sc.nextInt();  // 띄어쓰기 및 줄바꿈 기준 - 정수 입력
+double num2 = sc.nextDouble();  // 띄어쓰기 및 줄바꿈 기준 - 실수 입력
+boolean isTrue = nextBoolean();  // 띄어쓰기 및 줄바꿈 기준 - 참거짓 입력
+
+// print
+System.out.print("Hello");
+System.out.printf("%s", "Hello");
+System.out.println("Hello");
+System.out.println(String.format("%d", 3));
+```
+
+- BufferedReader & BufferedWriter (+ throws IOException)
 
 ```java
 public class Example {
