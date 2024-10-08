@@ -29,6 +29,9 @@ public class Permutation_Basic {
 
         for(int i=0; i<n; i++) {
             if(visited[i] == 1) continue;
+
+            // - Tip: 만약 문제에서 '수열을 오름차순으로 출력'하라고 명시했다면, 이 자리에 밑의 코드를 추가로 작성해주면 됨.
+            // if(!selected.isEmpty() && selected.get(selected.size()-1) > arr[i]) continue;  // 오름차순 수열이 아니라면 넘기기.
             
             selected.add(arr[i]);
             visited[i] = 1;
