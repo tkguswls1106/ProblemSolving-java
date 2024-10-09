@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-public class DFS_Basic_BOJ_1260 {
+public class DFS_BOJ_1260 {
     public static int n, m, v;
     public static int[][] board = new int[1002][1002];
     public static int[] visited = new int[1002];

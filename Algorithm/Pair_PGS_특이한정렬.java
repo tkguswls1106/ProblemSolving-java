@@ -49,7 +49,7 @@ class Solution {
     }
 }
 
-public class Pair_Basic_PGS_특이한정렬 {
+public class Pair_PGS_특이한정렬 {
     public static void main(String[] args) {
         Solution solution = new Solution();
 

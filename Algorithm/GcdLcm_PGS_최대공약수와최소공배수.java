@@ -21,7 +21,7 @@ class Solution {
     }
 }
 
-public class GcdLcm_Basic_PGS_최대공약수와최소공배수 {
+public class GcdLcm_PGS_최대공약수와최소공배수 {
     public static void main(String[] args) {
         Solution solution = new Solution();
 

@@ -10,7 +10,7 @@ import java.util.*;
 // ==> 삽입 가능한 인덱스번호 = -(실패 반환값 + 1)
 // ==> 즉, 검색 실패시 얻은 '삽입 가능한 인덱스번호'는, '끝인덱스+1 인덱스' or '찾을값의 초과값이 나타나는 첫 인덱스'를 의미함.
 
-public class BinarySearch_Basic {
+public class BinarySearch_SHJ {
 
     public static void printAll(int arrValue, int listValue) {
         String printStr = String.format("배열: %d, 리스트: %d", arrValue, listValue);
