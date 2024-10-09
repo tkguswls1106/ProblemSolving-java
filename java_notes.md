@@ -313,7 +313,7 @@ str = str.﻿toLowerCase();  // 문자열 내 모든 문자를 소문자로 변�
 
 ```java
 // String -> 다른 타입
-int num = Integer.parseInt(str_int);
+int num = Integer.parseInt(str_int);  // 참고로 파라미터에 char 불가능.
 float f = Float.parseFloat(str_float);
 double d = Double.parseDouble(str_double);
 long l = Long.parseLong(str_long);
