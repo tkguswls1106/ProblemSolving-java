@@ -2,6 +2,8 @@ import java.util.*;
 import java.io.*;
 import java.awt.*;
 
+// - 알고리즘: BFS (Maze)
+
 public class BOJ_2178 {
     public static int n, m;
     public static int[][] board = new int[102][102];

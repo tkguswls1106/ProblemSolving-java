@@ -1,5 +1,7 @@
 import java.util.*;
 
+// - 알고리즘: BFS (1차원 배열)
+
 public class BOJ_1697 {
     public static int n, k;
     public static int dist[] = new int[100002];
