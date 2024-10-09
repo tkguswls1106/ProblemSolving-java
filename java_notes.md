@@ -695,10 +695,14 @@ int num = 12;  // 10진수 int
 String str = "1100";  // 2진수 String
 
 // 10진수 int -> 2진수 String
-String str2 = Integer.toBinaryString(num);  // 또는 Integer.toString(num, 2);
+String str2 = Integer.toString(num, 2);  // 또는 Integer.toBinaryString(num);
+// 참고로 반환될 str2 안의 영어는 모두 소문자임.
+// - 헷갈릴때 Tip : toString(num, 2) => num toString 2 => num을 to해서 '2진수짜리 String'으로 변환.
 // - str2 출력 : 1100
 
 // 2진수 String -> 10진수 int
 int num10 = Integer.parseInt(str, 2);
+// 참고로 파라미터 str 안의 영어가 소문자든 대문자든 상관없음.
+// - 헷갈릴때 Tip : parseInt(str, 2) => parse (str, 2) => 'str 2진수짜리'를 파싱해서 int로 변환.
 // - num10 출력 : 12
 ```

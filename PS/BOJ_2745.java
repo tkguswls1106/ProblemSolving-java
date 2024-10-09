@@ -5,10 +5,10 @@ import java.util.*;
 public class BOJ_2745 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String str = sc.next();
+        String jinStr = sc.next();
         int jin = sc.nextInt();
 
-        int num = Integer.parseInt(str, jin);
-        System.out.print(num);
+        int num10 = Integer.parseInt(jinStr, jin);
+        System.out.print(num10);
     }
 }
