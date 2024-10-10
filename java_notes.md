@@ -37,10 +37,9 @@ import java.awt.*;  // Point
 
 ### 입출력
 
-데이터의 양이 많을 경우, BufferedReader와 BufferedWriter 사용. (Scanner보다 성능이 좋음)
-만약 줄바꿈이 아닌 공백을 기준으로 입력받아야한다면, split 또는 StringTokenizer를 함께 활용할것.
-
-- Scanner & print
+- 데이터 양이 적은 경우
+    - 입력 : `Scanner`
+    - 출력 : `System.out.print`
 
 ```java
 // Scanner
@@ -51,16 +50,21 @@ int num1 = sc.nextInt();  // 띄어쓰기 및 줄바꿈 기준 - 정수 입력
 double num2 = sc.nextDouble();  // 띄어쓰기 및 줄바꿈 기준 - 실수 입력
 boolean isTrue = nextBoolean();  // 띄어쓰기 및 줄바꿈 기준 - 참거짓 입력
 
-// print
+// System.out.print
 System.out.print("Hello");
 System.out.printf("%s", "Hello");
 System.out.println("Hello");
 System.out.println(String.format("%d", 3));
 ```
 
-- BufferedReader & BufferedWriter (+ throws IOException)
+- 데이터 양이 많은 경우
+    - 입력 : `BufferedReader`
+    - 출력 : `BufferedWriter` 또는 `StringBuilder`
+    - Buffered 입출력문 사용 시, throws IOException 작성할것.
+    - BufferedReader로 공백 기준 입력 시, StringTokenizer 또는 split 을 함께 운용할것.
 
 ```java
+// BufferedReader & BufferedWriter (+ throws IOException)
 public class Example {
     public static void main(String[] args) throws IOException {  // IOException 꼭 작성할것.
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -71,8 +75,8 @@ public class Example {
         bw.write("입력 받은 문자열: " + inputLine);  // write의 파라미터는 반드시 String일것.
 
         // 숫자로 읽고 출력할것 버퍼에 담기 (아직 출력 X)
-        int num = Integer.parseInt(br.readLine());
-        bw.write("입력 받은 숫자: " + num);  // write의 파라미터는 반드시 String일것.
+        int inputNum = Integer.parseInt(br.readLine());
+        bw.write("입력 받은 숫자: " + inputNum);  // write의 파라미터는 반드시 String일것.
 
         // 버퍼 비우기 (버퍼에 쌓인것들 출력)
         bw.flush();
@@ -529,6 +533,35 @@ List<String> list = new ArrayList<>(Arrays.asList(arr));  // Arrays.stream(arr).
 Integer[] arr = list.stream().toArray(Integer[]::new);  // 또는 list.toArray(new Integer[list.size()]);
 // List<String> -> String[]
 String[] arr = list.stream().toArray(String[]::new);  // 또는 list.toArray(new String[list.size()]);
+```
+
+### 혼합 2차원 배열
+
+- ArrayList&lt;Integer>[]
+
+```java
+// 선언
+ArrayList<Integer>[] arr = new ArrayList[size];  // 'ArrayList[] arr = ~'도 가능하긴함.
+// - 틀린 선언 1 : new ArrayList<>[size];
+// - 틀린 선언 2 : new ArrayList<>()[size];
+
+// 사용
+for(int i=0; i<size; i++) {
+    arr[i] = new ArrayList<>();
+}
+arr[0].add(3);
+ArrayList<Integer> list = arr[0];
+```
+
+- ArrayList<int[]>
+
+```java
+// 선언
+ArrayList<int[]> list = new ArrayList<>();
+
+// 사용
+list.add(new int[]{1, 2, 3});
+int[] arr = list.get(0);
 ```
 
 ### Tip
