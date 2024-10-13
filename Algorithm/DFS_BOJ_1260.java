@@ -1,6 +1,8 @@
 import java.util.*;
 import java.io.*;
 
+// [ DFS ]
+
 public class DFS_BOJ_1260 {
     public static int n, m, v;
     public static int[][] board = new int[1002][1002];

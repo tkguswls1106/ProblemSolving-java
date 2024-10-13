@@ -2,7 +2,7 @@ import java.util.*;
 import java.io.*;
 import java.awt.*;  // Point
 
-// [ BFS 그림(2차원) 문제 (Flood Fill) ]
+// [ BFS 그림 문제 (Flood Fill) - 기초 ]
 
 public class BFS_BOJ_1926 {  // 주의사항: 백준 제출시엔 Main 클래스로 네이밍 변경할것.
     public static int n, m;
