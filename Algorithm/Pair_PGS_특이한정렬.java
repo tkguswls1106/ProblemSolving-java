@@ -1,7 +1,7 @@
 import java.util.*;
 import java.util.stream.*;  // Collectors
 
-// [ Pair 구현 및 커스텀 정렬 ]
+// [ Pair 클래스 구현 및 커스텀 정렬 ]
 
 class Solution {
     public static class Pair implements Comparable<Pair> {

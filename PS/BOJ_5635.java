@@ -1,6 +1,8 @@
 import java.util.*;
 import java.io.*;
 
+// - 알고리즘: 커스텀 클래스 구현 및 정렬
+
 public class BOJ_5635 {
     public static class Person implements Comparable<Person> {
         public String name;
