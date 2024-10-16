@@ -483,6 +483,18 @@ list = list.stream()
 	   .collect(Collectors.toList());  // 가변 List<Integer>로 최종 리턴
 ```
 
+- All - 값 채우기
+
+```java
+// int[]
+Arrays.fill(arr, 7);  // 전체 요소 값을 7로 할당.
+Arrays.fill(arr, 2, 5, 7);  // 2~4인덱스 요소 값을 7로 할당.
+
+// List<Integer>
+Collections.fill(list, 7);  // 전체 요소 값을 7로 할당.
+Collections.fill(list.subList(2, 5), 7);  // 2~4인덱스 요소 값을 7로 할당.
+```
+
 - All - 기타 메소드
 
 ```java
