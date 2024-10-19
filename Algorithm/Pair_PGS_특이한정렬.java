@@ -2,9 +2,11 @@ import java.util.*;
 import java.util.stream.*;  // Collectors
 
 // [ Pair 클래스 구현 및 커스텀 정렬 ]
+// - 주의사항 : Pair 클래스 작성 시,
+// 만약 정렬이 필요없어 '@Override compareTo()'를 미구현한다면, 'implements Comparable<Pair>'도 함께 제거해야만 한다.
 
 class Solution {
-    public static class Pair implements Comparable<Pair> {
+    public static class Pair implements Comparable<Pair> {  // !!! 주의사항: 주의사항을 위에 기재해두었음. !!!
         public int num;
         public int dist;
         

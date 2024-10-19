@@ -99,7 +99,7 @@ public class BOJ_7576 {
                 if(dist[nx][ny] != -1) continue;  // 안익은토마토가 아니라면 건너뜀.
 
                 qu.offer(new Point(nx,ny));
-                dist[nx][ny] = dist[cur.x][cur.y] + 1;
+                dist[nx][ny] = dist[cur.x][cur.y] + 1;  // 참고로 어차피 기존에 dist가 -1이었어도, 0에서 +1값을 덮어씌우기에 문제없음.
             }
         }
     }

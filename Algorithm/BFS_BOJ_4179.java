@@ -8,7 +8,7 @@ public class BFS_BOJ_4179 {
     public static int n, m;
     public static int[][] board = new int[1002][1002];
     public static int[][] distF = new int[1002][1002], distJ = new int[1002][1002];
-    public static int[] dx = {1,0,-1,0}, dy = {0,1,0,-1};
+    public static int[] dx = {1, 0, -1, 0}, dy = {0, 1, 0, -1};
     public static Queue<Point> quF = new LinkedList<>(), quJ = new LinkedList<>();
     public static String answer = "IMPOSSIBLE";
 
