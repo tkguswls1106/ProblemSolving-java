@@ -252,17 +252,6 @@ boolean isExist = str.contains(String.valueOf(ch));
 boolean isSame = str1.equals(str2);  // true;
 ```
 
-- clone
-
-```java
-// 배열 복제 (반환타입: 복제한 변수의 자료형)
-int[] afterArr = beforeArr.clone();  // 또는 Arrays.copyOf(beforeArr, beforeArr.length);
-
-// - 사용 이유 :
-// int,String 이런건 참조타입이 아니라서 그냥 int afterNum = beforeNum; 이렇게 복제해도되지만,
-// int[],Integer[],ArrayList<Integer> 이런건 참조타입이라서 그저 위처럼 =로 복제하면, 이후 변경사항이 이전 배열에도 반영됨.
-```
-
 - repeat
 
 ```java
@@ -308,7 +297,7 @@ str = str.replaceAll("[abcde]", "!");  // 문자열 내 모든 a,b,c,d,e를 !로
 ```java
 // 대소문자 변환 (반환타입: String)
 str = str.toUpperCase();  // 문자열 내 모든 문자를 대문자로 변환.
-str = str.﻿toLowerCase();  // 문자열 내 모든 문자를 소문자로 변환.
+str = str.toLowerCase();  // 문자열 내 모든 문자를 소문자로 변환.
 ```
 
 ### 변환
@@ -486,16 +475,33 @@ list = list.stream()
 - All - 값 채우기
 
 ```java
-// int[]
+// int[] (반환타입: void)
 Arrays.fill(arr, 7);  // 전체 요소 값을 7로 할당.
 Arrays.fill(arr, 2, 5, 7);  // 2~4인덱스 요소 값을 7로 할당.
 
-// List<Integer>
+// List<Integer> (반환타입: void)
 Collections.fill(list, 7);  // 전체 요소 값을 7로 할당.
 Collections.fill(list.subList(2, 5), 7);  // 2~4인덱스 요소 값을 7로 할당.
 ```
 
-- All - 기타 메소드
+- All - 복제
+
+```java
+// int[] (반환타입: int[])
+int[] afterArr = beforeArr.clone();  // 또는 Arrays.copyOf(beforeArr, beforeArr.length);
+
+// List<Integer> (반환타입: ArrayList<Integer>)
+List<Integer> afterList = beforeList.stream().collect(Collectors.toList());
+// 또는
+List<Integer> afterList = new ArrayList<>();
+afterList.addAll(beforeList);
+
+// - 사용 이유 :
+// int,String 이런건 참조타입이 아니라서 그냥 int afterNum = beforeNum; 이렇게 복제해도되지만,
+// int[],Integer[],ArrayList<Integer> 이런건 참조타입이라서 그저 위처럼 =로 복제하면, 이후 변경사항이 이전 배열에도 반영됨.
+```
+
+- 기타 메소드
 
 ```java
 // 리스트 내 요소 교환 (반환타입: void)
