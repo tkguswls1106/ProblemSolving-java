@@ -553,7 +553,33 @@ Integer[] arr = list.stream().toArray(Integer[]::new);  // 또는 list.toArray(n
 String[] arr = list.stream().toArray(String[]::new);  // 또는 list.toArray(new String[list.size()]);
 ```
 
-### 혼합 2차원 배열
+### 일반 2차원
+
+- List<List&lt;Integer>>
+
+```java
+// 선언
+List<List<Integer>> list = new ArrayList<>();
+
+// 응용 예시
+List<Integer> li = new ArrayList<>();
+int arr[] = {1,2,3,4,5,6};
+for(int i=0; i<arr.length; i+=2) {
+    li.add(arr[i]);
+    li.add(arr[i+1]);
+    
+    list.add(new ArrayList<>(li));
+    // - 틀린 삽입방식 : list.add(li);
+    // list 내 li는 기존의 li 리스트에 참조되어, 이후 li.clear()에도 함께 영향을 받음.
+    // 때문에 아예 새로운 리스트로 다시 생성해서 추가해야함.
+    li.clear();
+}
+
+System.out.println(list.toString());  // 출력: [[1, 2], [3, 4], [5, 6]]
+System.out.println(list.get(1).get(0));  // 출력: 3
+```
+
+### 혼합 2차원
 
 - ArrayList&lt;Integer>[]
 
