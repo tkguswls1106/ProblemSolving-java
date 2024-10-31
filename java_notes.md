@@ -476,6 +476,53 @@ list = list.stream()
 	   .collect(Collectors.toList());  // 가변 List<Integer>로 최종 리턴
 ```
 
+- int[] - 합계, 평균, 최소, 최대, 개수
+
+```java
+// 합계 (반환타입: int)
+int sum = Arrays.stream(arr).sum();  // 배열이 비어있어도, 기본 sum=0 처리됨.
+
+// 평균 (반환타입: double)
+double avg = Arrays.stream(arr).average().orElse(0.0);
+
+// 최소 (반환타입: int)
+int min = Arrays.stream(arr).min().orElse(0);
+
+// 최대 (반환타입: int)
+int max = Arrays.stream(arr).max().orElse(0);
+
+// 개수 (반환타입: long)
+long cnt = Arrays.stream(arr).filter(num -> num > 3).count();
+
+// - 필터링 Tip :
+// 필터링 적용 시, stream 바로뒤에 호출하면되며 나머지는 동일함.
+// ex) Arrays.stream(arr).filter(조건).~
+```
+
+- List&lt;Integer> - 합계, 평균, 최소, 최대, 개수
+
+```java
+// 합계 (반환타입: int)
+int sum = list.stream().mapToInt(i->i).sum();  // 리스트가 비어있어도, 기본 sum=0 처리됨.
+
+// 평균 (반환타입: double)
+double avg = list.stream().mapToInt(i->i).average().orElse(0.0);
+
+// 최소 (반환타입: int)
+int min = list.stream().mapToInt(i->i).min().orElse(0);
+
+// 최대 (반환타입: int)
+int max = list.stream().mapToInt(i->i).max().orElse(0);
+
+// 개수 (반환타입: long)
+long cnt = list.stream().filter(num -> num > 3).count();
+// 요소 개수 카운트는 타입에 관계없이 작동하므로, 리스트에서 mapToInt() 없이도 count() 호출이 가능함.
+
+// - 필터링 Tip :
+// 필터링 적용 시, stream 바로뒤에 호출하면되며 나머지는 동일함.
+// ex) list.stream().filter(조건).~
+```
+
 - All - 값 채우기
 
 ```java
