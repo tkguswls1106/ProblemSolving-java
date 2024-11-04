@@ -366,6 +366,7 @@ StringBuilder stb = new StringBuilder(str);
 stb.append('a');  // 문자 삽입
 stb.append("abc");  // 문자열 삽입
 stb.append('a').append("bc");  // 반환타입이 StringBuilder이므로, 메소드 체이닝 가능.
+stb.append(num).append("\n");  // stb.append(num + "\n"); 보다 성능 우수.
 
 // 문자 조회 (반환타입: char)
 char ch = stb.charAt(idx);  // 인덱스 기반 조회
