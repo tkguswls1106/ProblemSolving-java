@@ -536,13 +536,15 @@ Collections.fill(list, 7);  // 전체 요소 값을 7로 할당.
 Collections.fill(list.subList(2, 5), 7);  // 2~4인덱스 요소 값을 7로 할당.
 ```
 
-- All - 복제
+- All - 얕은 복제
 
 ```java
 // int[] (반환타입: int[])
 int[] afterArr = beforeArr.clone();  // 또는 Arrays.copyOf(beforeArr, beforeArr.length);
 
 // List<Integer> (반환타입: ArrayList<Integer>)
+List<Integer> afterList = new ArrayList<>(beforeList);
+// 또는
 List<Integer> afterList = beforeList.stream().collect(Collectors.toList());
 // 또는
 List<Integer> afterList = new ArrayList<>();
