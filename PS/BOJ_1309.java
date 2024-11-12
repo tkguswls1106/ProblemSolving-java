@@ -12,6 +12,7 @@ import java.util.*;
 // => 현재행 XO일때 가능한 이전행: OX, XX
 
 public class BOJ_1309 {
+    // - dp 테이블 정의 :
     // dp[i][k] = i번째 행에 k방법의 동물을 놓는 경우의 수
     public static int[][] dp = new int[100002][3];  // 인덱스 0: XX, 1: OX, 2: XO
 
@@ -19,12 +20,12 @@ public class BOJ_1309 {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
 
-        // 초기값 정의
+        // - 초기값 할당 :
         dp[1][0] = 1;
         dp[1][1] = 1;
         dp[1][2] = 1;
 
-        // dp값 세팅
+        // - dp값 세팅 :
         for(int i=2; i<=n; i++) {
             // 출력문에서만이 아닌, 여기서도 마찬가지로 아예 mod연산을 해줘야지 자료형 범위 초과를 막을 수 있음.
             dp[i][0] = (dp[i-1][0] + dp[i-1][1] + dp[i-1][2]) % 9901;
