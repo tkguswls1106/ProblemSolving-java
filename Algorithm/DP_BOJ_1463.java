@@ -1,6 +1,7 @@
 import java.util.*;
 
 // [ DP (바텀업 방식) - 기초 ]
+// 참고로 이 문제는 DP 말고, BFS로도 풀 수 있음.
 
 // - DP 방식 설명:
 // * Top-Down(탑다운):
