@@ -1,9 +1,11 @@
 import java.util.*;
 
+// - 알고리즘: Queue
+
 class Solution {
     public int solution(int bridge_length, int weight, int[] truck_weights) {
         Queue<Integer> qu = new LinkedList<>();
-        for(int i=0; i<bridge_length; i++) {
+        for(int i=0; i<bridge_length; i++) {  // 다리길이만큼 미리 대기시간용도의 대체숫자(-1)을 넣어줌.
             qu.offer(-1);
         }
         
