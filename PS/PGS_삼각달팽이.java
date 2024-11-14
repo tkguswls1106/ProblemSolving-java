@@ -1,5 +1,3 @@
-import java.util.*;
-
 class Solution {
     // 아래이동: 1 0 , 우측이동: 0 1 , 왼쪽위대각선이동: -1 -1
     public static int[] dx = {1, 0, -1};
@@ -35,15 +33,16 @@ class Solution {
             }
         }
         
-        List<Integer> list = new ArrayList<>();
+        int[] answer = new int[num];
+        int idx = 0;
         for(int i=0; i<n; i++) {
             for(int j=0; j<n; j++) {
                 num = arr[i][j];
-                if(num > 0) list.add(num);
+                if(num > 0) answer[idx++] = num;
             }
         }
         
-        return list.stream().mapToInt(i->i).toArray();
+        return answer;
     }
 }
 
