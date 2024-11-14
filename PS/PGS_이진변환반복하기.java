@@ -1,3 +1,5 @@
+// - 알고리즘: 진법(진수) 변환
+
 class Solution {
     public int[] solution(String s) {
         int convertCnt = 0;

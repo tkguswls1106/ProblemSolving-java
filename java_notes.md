@@ -22,7 +22,7 @@
 ### import
 
 ```java
-import java.util.*;  // ArrayList, Scanner
+import java.util.*;  // Scanner, ArrayList, StringTokenizer
 import java.io.*;  // BufferedReader
 import java.util.stream.*;  // Collectors
 import java.awt.*;  // Point
