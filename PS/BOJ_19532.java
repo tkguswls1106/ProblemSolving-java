@@ -1,7 +1,7 @@
 import java.util.*;
 
 // - 알고리즘: 브루트포스
-// - 시간복잡도: O(2000*2000=400만) 밖에 안나오므로, 브루트포스를 활용 가능하다.
+// - 시간복잡도: O(2000*2000=400만) 밖에 안나오므로, 브루트포스 활용이 가능하다.
 
 public class BOJ_19532 {
     public static void main(String[] args) {
