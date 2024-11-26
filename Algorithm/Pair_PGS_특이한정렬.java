@@ -32,8 +32,8 @@ class Solution {
             }
             
             // 내부 필드값 비교
-            Pair b = (Pair) obj;  // this를 a로, b를 b로 보면됨.
-            if(this.num == b.num && this.dist == b.dist) {
+            Pair b = (Pair) obj;
+            if(this.num == b.num && this.dist == b.dist) {  // this를 a로, b를 b로 보면됨.
                 return true;
             }
             else {
