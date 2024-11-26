@@ -664,6 +664,8 @@ int[] arr = list.get(0);
 
 ### Tip
 
+- 주의사항
+    - 배열 및 리스트에서, 사이즈 선언 및 for문 등의 인덱스 접근은 int 자료형으로만 가능.
 - 초기화
     - 2차원 배열 : `int[][] answer = new int[num_list.length / n][n];`
     - size 큰 리스트 : `clear()` 대신 `new 연산` 사용 고려

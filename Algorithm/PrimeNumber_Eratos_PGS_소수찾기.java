@@ -7,7 +7,23 @@ import java.util.*;
 // i=2부터 시작하여 범위내에서 i의 배수를 모두 제거해주고, i++을 해가며 남은것들에 반복해서 i의 배수를 제거함.
 // 그렇게하면 최종적으로 남은 숫자범위내에는 소수만 남게 됨.
 
-class Solution {    
+// - 추가 Tip:
+/*
+// 특정 숫자의 소수 확인 메소드
+public static boolean isPrimeNumber(int num)
+    if(num < 2) return false;
+
+    for(int i=2; i<=Math.sqrt(num); i++) {  // 또는 'i*i<=num' 사용. 하지만 sqrt 방식이 더 빠름.
+        if(num%i == 0){
+            return false;
+        }
+    }
+    
+    return true;
+}
+*/
+
+class Solution {
     public int solution(int n) {
         // boolean[] 말고 Boolean[]으로 해야지, 차후 stream 활용이 효과적임.
         Boolean[] primeArr = new Boolean[n + 1];  // 인덱스로는 '0'~'n+1-1'
