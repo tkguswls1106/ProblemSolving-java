@@ -234,7 +234,7 @@ char[] charArray = str.toCharArray();
 // 검색 (반환타입: int)
 int index = str.indexOf('w');  // 문자 검색
 int index = str.indexOf("welcome");  // 문자열 검색
-int index = str.indexOf("welcome",10);  // 문자열을 10번째 index부터 검색
+int index = str.indexOf("welcome", 10);  // 문자열을 10번째 index부터 검색
 
 // - 주의사항 : 참고로 int[] 이러한 배열에는 사용이 불가능함.
 ```
