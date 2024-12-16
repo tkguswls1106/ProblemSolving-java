@@ -121,8 +121,8 @@ public class Example {
 ### 배열 & 리스트
 
 - 기본형 배열 : int[], double[], char[], …
-- 참조형 배열 : Interger[], Double[], Character[], String[], …
-- 참조형 리스트 : List&lt;Interger>, List&lt;Double>, List&lt;Character>, List&lt;String>, …
+- 참조형 배열 : Integer[], Double[], Character[], String[], …
+- 참조형 리스트 : List&lt;Integer>, List&lt;Double>, List&lt;Character>, List&lt;String>, …
 
 ### 변환
 
@@ -440,6 +440,7 @@ arr = Arrays.stream(arr)
 	    .sorted((a, b) -> b - a)  // 내림차순 정렬 (boxed 및 mapToInt 필요)
 	    .mapToInt(i->i)  // Integer[] -> int[] 변환 (sorted 내림차순때만 필요)
 	    .toArray();  // int[]로 최종 리턴
+// 만약 Integer[] 이라면, 'Arrays.sort(arr, Collections.reverseOrder());' 사용 가능.
 						
 // 중복 제거 (반환타입: Array)
 arr = Arrays.stream(arr)
@@ -449,7 +450,7 @@ arr = Arrays.stream(arr)
 // 중복 제거 & 정렬 (반환타입: Array)
 arr = Arrays.stream(arr)
 	    .distinct()  // 중복제거
-	    .sorted()  // 오름차순 정렬 (boxed로 Interger[] 변환하는 절차 필요없음)
+	    .sorted()  // 오름차순 정렬 (boxed로 Integer[] 변환하는 절차 필요없음)
 	    .toArray();  // int[]로 최종 리턴
 ```
 
@@ -473,7 +474,7 @@ list = list.stream()
 // 중복 제거 & 정렬 (반환타입: List)
 list = list.stream()
 	   .distinct()  // 중복제거
-	   .sorted()  // 오름차순 정렬 (boxed로 Interger[] 변환하는 절차 필요없음)
+	   .sorted()  // 오름차순 정렬 (boxed로 Integer[] 변환하는 절차 필요없음)
 	   .collect(Collectors.toList());  // 가변 List<Integer>로 최종 리턴
 ```
 
