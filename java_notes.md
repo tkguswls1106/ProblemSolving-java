@@ -777,7 +777,10 @@ for(String value : m.values()) {  // value
 
 ### PriorityQueue
 
-- C++과는 달리, 자바에서는 기본적으로 최소힙으로 구현됨.
+- `PriorityQueue<자료형> pq = new PriorityQueue<>()` : 선언 (최소힙)
+    - C++과는 달리, 자바에서는 기본적으로 최소힙으로 구현됨.
+- `〃 = new PriorityQueue<>(Collections.reverseOrder())` : 선언 (최대힙)
+- 사용 메소드는 Queue와 동일함.
 
 ### Deque
 
