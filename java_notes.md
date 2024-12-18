@@ -433,6 +433,9 @@ while(stt.hasMoreTokens()) {  // (반환타입: boolean)
 - 리스트(List) : 크기 가변. 삽입/삭제 많은 경우 효과적
 - ArrayList 선언 : `List<Integer> list = new ArrayList<>();`
 - LinkedList 선언 : `LinkedList<Integer> list = new LinkedList<>();`
+- LinkedList 메소드
+    - `list.addFirst(요소값)` , `addLast(요소값)` , `add(인덱스,요소값)`
+    - `list.removeFirst(요소값)` , `removeLast(요소값)` , `remove(인덱스)`
 - ArrayList vs LinkedList : LinkedList가 ArrayList보다 조회는 느리지만 삽입/삭제는 빠름
 
 ### Stream
