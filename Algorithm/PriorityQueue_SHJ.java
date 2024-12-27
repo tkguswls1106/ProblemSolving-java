@@ -13,8 +13,8 @@ import java.util.*;
 
 public class PriorityQueue_SHJ {
     public static class Pair implements Comparable<Pair> {
-        int num1;
-        int num2;
+        public int num1;
+        public int num2;
 
         public Pair(int num1, int num2) {
             this.num1 = num1;
