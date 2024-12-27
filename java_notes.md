@@ -315,6 +315,7 @@ str = str.replaceAll("[abcde]", "!");  // 문자열 내 모든 a,b,c,d,e를 !로
 // "[abcde]" : 문자 a,b,c,d,e
 // "[^a-e]" : 문자 a,b,c,d,e를 제외한 나머지
 // "aya|ye|woo|ma" : 문자열 aya,ye,woo,ma
+// "[\\[\\],]" : 문자 [,],','
 ```
 
 - toUpperCase & toLowerCase
