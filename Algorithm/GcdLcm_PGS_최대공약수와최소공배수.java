@@ -1,6 +1,6 @@
 import java.util.*;
 
-// [ 최대공약수(GCD) & 최소공배수(LCM) ]
+// [ 유클리드 호제법 - 최대공약수(GCD) & 최소공배수(LCM) ]
 
 class Solution {
     // 최대공약수(GCD)
