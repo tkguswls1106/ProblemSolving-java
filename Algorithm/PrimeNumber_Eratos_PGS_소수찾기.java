@@ -10,10 +10,11 @@ import java.util.*;
 // - 추가 Tip:
 /*
 // 특정 숫자의 소수 확인 메소드
-public static boolean isPrimeNumber(int num)
+public static boolean isPrimeNumber(int num) {
     if(num < 2) return false;
 
     for(int i=2; i<=Math.sqrt(num); i++) {  // 또는 'i*i<=num' 사용. 하지만 sqrt 방식이 더 빠름.
+        // 참고로 위의 'i<=Math.sqrt(num)'로 인해 2,3 등의 범위는 무시처리됨.
         if(num%i == 0){
             return false;
         }
