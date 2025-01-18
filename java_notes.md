@@ -25,7 +25,7 @@
 import java.util.*;  // Scanner, ArrayList, StringTokenizer
 import java.io.*;  // BufferedReader
 import java.util.stream.*;  // Collectors
-import java.awt.*;  // Point
+import java.awt.*;  // Point ('util.List'와 중복 주의 -> 'awt.Point'로 선언할것.)
 ```
 
 ### 길이
