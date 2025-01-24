@@ -8,6 +8,8 @@ import java.io.*;
 // - 코드 특징 :
 // 이 코드에서는 투포인터를 사용하여 누적합(덧셈값)을 활용하는 문제를 다루고 있다.
 // 하지만 만약 차이값을 활용하는 문제의 경우, 덧셈이 아니므로 배열 끝에 0을 추가해서는 안되며, 배열도 정렬하고 시작해야한다.
+// 문제 상황에 따라, 'start=0 end=0'처럼 포인터를 한쪽이 아닌 'start=0 end=n-1'처럼 양쪽으로 배치할 수도 있고,
+// 'start++ end++'가 아닌 'start++ end--'처럼 안쪽 방향으로 이동할 수도 있으며, 고정 크기라면 포인터 둘을 동시에 이동시킬 경우도 있다.
 
 public class TwoPointer_BOJ_2003 {
     public static void main(String[] args) throws IOException {
