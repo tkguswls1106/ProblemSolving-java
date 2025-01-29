@@ -13,7 +13,7 @@ import java.util.*;
 public static boolean isPrimeNumber(int num) {
     if(num < 2) return false;
 
-    for(int i=2; i<=Math.sqrt(num); i++) {  // 또는 'i*i<=num' 사용. 하지만 sqrt 방식이 더 빠름.
+    for(int i=2; i<=Math.sqrt(num); i++) {  // 또는 'i*i<=num' 사용. 하지만 sqrt 방식이 더 빠른 경우가 있음.
         // 참고로 위의 'i<=Math.sqrt(num)'로 인해 2,3 등의 범위는 무시처리됨.
         if(num%i == 0){
             return false;
@@ -26,21 +26,26 @@ public static boolean isPrimeNumber(int num) {
 
 class Solution {
     public int solution(int n) {
-        // boolean[] 말고 Boolean[]으로 해야지, 차후 stream 활용이 효과적임.
+        // boolean[] 말고 Boolean[]으로 해야지, 차후 stream 활용이 효과적임. (다만, stream 활용 안할거면 boolean[]이 더 효율적임.)
         Boolean[] primeArr = new Boolean[n + 1];  // 인덱스로는 '0'~'n+1-1'
         Arrays.fill(primeArr, true);
-        primeArr[1] = false;  // 어차피 1은 소수가 아님.
+        primeArr[0] = primeArr[1] = false;  // 어차피 0,1은 소수가 아님.
         
         for(int i=2; i*i<=n; i++) {
             if(primeArr[i] == true) {
-                for(int j=2; i*j<=n; j++) {
-                    primeArr[i*j] = false;
+                // - 과거 버전 -
+                // for(int j=2; i*j<=n; j++) {
+                //     primeArr[i*j] = false;
+                // }
+                // - 최적화 버전 -
+                for(int j=i*i; j<=n; j+=i) {
+                    primeArr[j] = false;
                 }
             }
         }
         
         int primeCnt = (int) Arrays.stream(primeArr)
-                                .skip(1)  // skip(n)은 처음 n개의 요소를 건너뛰는 메소드임.
+                                // .skip(1)  // skip(n)은 처음 n개의 요소를 건너뛰는 메소드임.
                                 .filter(isPrime -> isPrime==true)  // 만약 소수가 아닌수라면 false로 조회할것.
                                 .count();  // 인덱스 0을 제외한, 1부터 끝까지 카운트.
         return primeCnt;
