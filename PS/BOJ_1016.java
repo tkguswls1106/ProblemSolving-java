@@ -10,7 +10,7 @@ public class BOJ_1016 {
         int len = (int) (maxNum - minNum) + 1;
 
         // '에라토스테네스의 체'를 응용.
-        Boolean[] isAnswerArr = new Boolean[len];
+        Boolean[] isAnswerArr = new Boolean[len];  // isAnswerArr[idx] = 'minNum + idx' ~ 'maxNum'
         Arrays.fill(isAnswerArr, true);
         for(long i=2; i*i<=maxNum; i++) {
             long powNum = i * i;
