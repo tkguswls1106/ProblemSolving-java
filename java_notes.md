@@ -562,7 +562,7 @@ Collections.fill(list, 7);  // 전체 요소 값을 7로 할당.
 Collections.fill(list.subList(2, 5), 7);  // 2~4인덱스 요소 값을 7로 할당.
 ```
 
-- All - 얕은 복제
+- All - 깊은 복사
 
 ```java
 // int[] (반환타입: int[])
@@ -577,8 +577,8 @@ List<Integer> afterList = new ArrayList<>();
 afterList.addAll(beforeList);
 
 // - 사용 이유 :
-// int,String 이런건 참조타입이 아니라서 그냥 int afterNum = beforeNum; 이렇게 복제해도되지만,
-// int[],Integer[],ArrayList<Integer> 이런건 참조타입이라서 그저 위처럼 =로 복제하면, 이후 변경사항이 이전 배열에도 반영됨.
+// int,String 이런건 참조타입이 아니라서 그냥 int afterNum = beforeNum; 이렇게 복사해도되지만,
+// int[],Integer[],ArrayList<Integer> 이런건 참조타입이라서 그저 위처럼 =로 복사(얕은 복사)하면, 이후 변경사항이 이전 배열에도 반영됨.
 ```
 
 - 기타 메소드

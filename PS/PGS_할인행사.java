@@ -21,7 +21,7 @@ class Solution {
             int idx = i + 10;
             if(!(idx <= len)) break;
             
-            list2 = new ArrayList<>(list);  // 리스트 얕은 복제
+            list2 = new ArrayList<>(list);  // 리스트 깊은 복사
             for(int j=i; j<idx; j++) {
                 int findIdx = Collections.binarySearch(list2, discount[j]);  // 이분탐색 실시.
                 
