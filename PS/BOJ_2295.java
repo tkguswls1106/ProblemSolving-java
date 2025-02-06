@@ -1,5 +1,5 @@
 // < 성공 방법 >
-// - 알고리즘: 이분탐색
+// - 알고리즘: 이분 탐색
 
 import java.util.*;
 import java.io.*;

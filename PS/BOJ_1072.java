@@ -1,6 +1,6 @@
 import java.util.*;
 
-// - 알고리즘: 이분탐색
+// - 알고리즘: 이분 탐색
 
 public class BOJ_1072 {
     public static int getZ(int x, int y) {
