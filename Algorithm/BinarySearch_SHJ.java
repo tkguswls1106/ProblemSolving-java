@@ -1,6 +1,6 @@
 import java.util.*;
 
-// [ 이분탐색 (Binary Search) ]
+// [ 이분탐색 (Binary Search) - 컬렉션 메소드 활용편 ]
 // Arrays.binarySearch(배열, 찾을값)
 // Collections.binarySearch(리스트, 찾을값)
 // 배열(리스트)은 오름차순 정렬되어있어야 한다.
@@ -11,7 +11,6 @@ import java.util.*;
 // ==> 즉, 검색 실패시 얻은 '삽입 가능한 인덱스번호'는, '끝인덱스+1 인덱스' or '찾을값의 초과값이 나타나는 첫 인덱스'를 의미함.
 
 public class BinarySearch_SHJ {
-
     public static void printAll(int arrValue, int listValue) {
         String printStr = String.format("배열: %d, 리스트: %d", arrValue, listValue);
         System.out.println(printStr);
