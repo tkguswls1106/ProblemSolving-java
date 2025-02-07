@@ -1,11 +1,11 @@
-// [ DFS ]
-
 // < 성공 방법 1 - Ver.2 (개선된 코드) >
 // 'int[][]' 사용 방법
 // => 'ArrayList<Integer>[]' 방법보다 코드가 더 복잡하지만, 별도의 정점번호 정렬과정이 필요없음.
 
 import java.util.*;
 import java.io.*;
+
+// [ DFS ]
 
 public class DFS_BOJ_1260 {
     public static int n, m, v;

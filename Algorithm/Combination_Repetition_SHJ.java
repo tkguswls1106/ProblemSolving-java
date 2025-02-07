@@ -1,6 +1,6 @@
 import java.util.*;
 
-// [ 중복조합 (Combination with Repetition) - with 백트래킹 ]
+// [ 중복조합 (Combination with Repetition) with 백트래킹 ]
 // - 개념 특징 :
 // 중복조합이란 중복을 허용한채로 n개의 원소 중에서 r개를 뽑는 경우의 수를 의미한다.
 // 순서가 없게 뽑는 것은 일반적인 조합과 동일하지만, 같은 원소를 중복해서 뽑을 수 있다는 것에 차이가 있다.

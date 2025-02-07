@@ -1,6 +1,6 @@
 import java.util.*;
 
-// [ 중복순열 (Permutation with Repetition) - with 백트래킹 ]
+// [ 중복순열 (Permutation with Repetition) with 백트래킹 ]
 // - 개념 특징 :
 // 중복순열이란 중복을 허용한채로 서로 다른 n개의 원소에서 r개를 뽑아 한 줄로 세우는 부분수열 경우의 수를 의미한다.
 // 순서가 있게 뽑는 것은 일반적인 순열과 동일하지만, 같은 원소를 중복해서 뽑을 수 있다는 것에 차이가 있다.
