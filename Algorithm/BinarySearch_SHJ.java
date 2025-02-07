@@ -10,6 +10,9 @@ import java.util.*;
 // ==> 삽입 가능한 인덱스번호 = -(실패 반환값 + 1)
 // ==> 즉, 검색 실패시 얻은 '삽입 가능한 인덱스번호'는, '끝인덱스+1 인덱스' or '찾을값의 초과값이 나타나는 첫 인덱스'를 의미함.
 
+// !!! 주의사항 : 만약 배열에 중복된 요소가 있을 경우, 해당 요소를 검색할 때 컬렉션 메소드가 항상 맨앞의 인덱스를 반환한다고 보장하지 않는다. !!!
+// 예시로, 'int[] arr = {1,3,5,9,11,11,15}'에서 'Arrays.binarySearch(arr,11)' 검색 시, 맨앞의 4가 아닌 5가 나오는 문제가 발생한다.
+
 public class BinarySearch_SHJ {
     public static void printAll(int arrValue, int listValue) {
         String printStr = String.format("배열: %d, 리스트: %d", arrValue, listValue);
