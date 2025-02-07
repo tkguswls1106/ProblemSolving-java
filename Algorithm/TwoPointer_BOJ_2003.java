@@ -35,11 +35,11 @@ public class TwoPointer_BOJ_2003 {
                 start++;
             }
             else if(sum > m) {
-                sum -= arr[start];
+                sum -= arr[start];  // 구간의 범위를 줄여, 구간 내 합계값을 감소시킴.
                 start++;
             }
             else {  // (sum < m)
-                sum += arr[end];
+                sum += arr[end];  // 구간의 범위를 확장하여, 구간 내 합계값을 증가시킴.
                 end++;
             }
         }
