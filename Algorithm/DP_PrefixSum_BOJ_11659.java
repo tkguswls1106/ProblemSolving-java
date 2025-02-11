@@ -2,10 +2,13 @@ import java.util.*;
 import java.io.*;
 
 // [ DP 누적합 (DP Prefix Sum) ]
-// - 문제 함정:
+// - 문제 함정 :
 // 이 문제는 일반적인 구현으로도 풀수는 있지만,
 // 시간제한이 1초인 반면, N과 M의 최댓값이 각각 100000이라서, 구현으로 풀게되면 O(NM=100억)까지 시간복잡도가 나올수있어 구현 방식으로 풀면 안된다.
 // 그러므로, DP를 활용한 누적합(Prefix sum) 알고리즘으로 풀어야만 한다.
+// - DP 누적합 vs 투포인터 누적합 :
+// DP의 누적합 문제는 '구간 내 합계(sum)를 구하라'를 바탕으로함.
+// 반면, 투포인터의 누적합 문제는 '구간 내 합계(sum)가 num인 경우를 찾아라'를 바탕으로함.
 
 public class DP_PrefixSum_BOJ_11659 {
     public static void main(String[] args) throws IOException {
