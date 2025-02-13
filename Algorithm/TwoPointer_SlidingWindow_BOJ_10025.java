@@ -29,7 +29,7 @@ public class TwoPointer_SlidingWindow_BOJ_10025 {
         int k = Integer.parseInt(stt.nextToken());  // 좌우 K거리
         int dist = k*2 + 1;  // ex. 좌표4 거리3 => 123 좌표4 567 => 닿는 거리반경 총7만큼 (거리x2 + 1)
         int[] arr = new int[1000002];  // 가능한 좌표값 0 ~ 1000000 => start=0 부터 시작, 배열길이 1000001 => arr[nextEnd] 인덱스 초과 방지 => 배열길이 1000002 (1000001 + 1)
-        // arr[1000001] = 0;  // 배열길이를 더 늘려서, 덧셈시 '미리 ++end된 값인 arr[nextEnd]'의 인덱스 초과를 방지. 반드시 맨뒤에 넣을것!!!
+        // arr[1000001] = 0;  // 맨뒤에 배열길이를 더 늘려서, 덧셈시 '미리 ++end된 값인 arr[nextEnd]'의 인덱스 초과를 방지. (사실 arr[추가]=0은 안적어줘도되는 명시적 선언임.)
 
         int sum = 0;
         for(int i=0; i<n; i++) {

@@ -1,3 +1,6 @@
+// < 성공 방법 1 >
+// end 사용 방법. (nextEnd 말고)
+
 import java.util.*;
 import java.io.*;
 
@@ -57,3 +60,48 @@ public class TwoPointer_PrefixSum_BOJ_2003 {
         System.out.print(cnt);
     }
 }
+
+/*
+// < 성공 방법 2 >
+// nextEnd 사용 방법. (end 말고)
+
+import java.util.*;
+import java.io.*;
+
+public class TwoPointer_PrefixSum_BOJ_2003 {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer stt = new StringTokenizer(br.readLine());
+
+        int n = Integer.parseInt(stt.nextToken());
+        int m = Integer.parseInt(stt.nextToken());
+        int[] arr = new int[n+1];  // 투포인터의 구간 내 누적합 문제이므로, n이 아닌 n+1 크기로 설정.
+
+        stt = new StringTokenizer(br.readLine());
+        for(int i=0; i<n; i++) {
+            arr[i] = Integer.parseInt(stt.nextToken());
+        }
+        arr[n] = 0;  // 맨뒤에 배열길이를 더 늘려서, 덧셈시 '미리 ++end된 값인 arr[nextEnd]'의 인덱스 초과를 방지. (사실 arr[추가]=0은 안적어줘도되는 명시적 선언임.)
+
+        int start = 0, nextEnd = 1;
+        int sum = arr[0], cnt = 0;
+        while(start<=nextEnd && nextEnd<arr.length) {  // 누적합이므로 웬만해서는 start'<='end 활용을 추천.
+            if(sum == m) {
+                cnt++;
+                sum -= arr[start];
+                start++;
+            }
+            else if(sum > m) {
+                sum -= arr[start];  // 구간의 범위를 줄여, 구간 내 합계값을 감소시킴.
+                start++;
+            }
+            else {  // (sum < m)
+                sum += arr[nextEnd];  // 구간의 범위를 확장하여, 구간 내 합계값을 증가시킴.
+                nextEnd++;
+            }
+        }
+
+        System.out.print(cnt);
+    }
+}
+*/

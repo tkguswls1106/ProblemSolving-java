@@ -17,7 +17,7 @@ public class BOJ_2559 {
             arr[i] = Integer.parseInt(stt.nextToken());
             if(i < k) sum += arr[i];
         }
-        arr[n] = 0;  // 배열길이를 더 늘려서 덧셈시 arr[nextEnd]의 인덱스 초과를 방지. 반드시 맨뒤에 넣을것!!!
+        arr[n] = 0;  // 맨뒤에 배열길이를 더 늘려서, 덧셈시 '미리 ++end된 값인 arr[nextEnd]'의 인덱스 초과를 방지. (사실 arr[추가]=0은 안적어줘도되는 명시적 선언임.)
         
         int start = 0, nextEnd = k;  // nextEnd = (nowEnd: k - 1) + 1 = k
         int maxSum = Integer.MIN_VALUE;  // 만약 maxSum=-1로 선언한다면, 이와같은 음수 누적합이 가능한 문제에서는 sum값이 -1보다 작아 갱신되지않을수있어 사용하면 안됨.

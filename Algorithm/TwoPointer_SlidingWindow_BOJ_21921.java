@@ -26,7 +26,7 @@ public class TwoPointer_SlidingWindow_BOJ_21921 {
             arr[i] = Integer.parseInt(stt.nextToken());
             if(i < day) sum += arr[i];  // 'start=0 ~ end=day-1' 현재 구간의 누적합
         }
-        arr[n] = 0;  // 배열길이를 더 늘려서 덧셈시 arr[nextEnd]의 인덱스 초과를 방지. 반드시 맨뒤에 넣을것!!!
+        arr[n] = 0;  // 맨뒤에 배열길이를 더 늘려서, 덧셈시 '미리 ++end된 값인 arr[nextEnd]'의 인덱스 초과를 방지. (사실 arr[추가]=0은 안적어줘도되는 명시적 선언임.)
 
         int start = 0, nextEnd = day;  // nextEnd = (nowEnd: day - 1) + 1 = day
         int maxSum = Integer.MIN_VALUE, cnt = 0;  // 비교변수값에는 현재 구간을 아직 적용 X.
@@ -53,6 +53,7 @@ public class TwoPointer_SlidingWindow_BOJ_21921 {
         // int nowStart = 0, nextEnd = day;  // nextEnd = (nowEnd: day - 1) + 1 = day
         // int maxSum = sum, cnt = 1;  // 변수값에 현재 구간을 적용 O.
         // while(nextEnd < n) {  // 반복문에서는 다음 구간을 확인.
+        //     // [ 슬라이딩 윈도우 : 다른 투포인터 방식과는 달리, if~else 모든 조건에서 포인터(둘다)를 이동해야함. ]
         //     // 현재 구간의 앞을 제거. (첫 요소)
         //     sum -= arr[nowStart];
         //     nowStart++;
