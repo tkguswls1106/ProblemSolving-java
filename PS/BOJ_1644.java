@@ -23,7 +23,7 @@ public class BOJ_1644 {
         for(int i=2; i<isPrimeArr.length; i++) {
             if(isPrimeArr[i] == true) primeList.add(i);
         }
-        primeList.add(0);  // 투포인터의 누적합 계산시, 끝 인덱스 확인을 위함. 반드시 맨뒤에 넣을것!!! (ex. 53 입력)
+        primeList.add(0);  // 투포인터의 누적합 계산시, 끝 인덱스 확인을 위해 맨뒤에 추가할것. (추가하지 않을시, end가 끝에 도달했을때 start의 단독sum값을 확인하지않고 while문이 종료됨. 예시로 53 입력이 있음.)
     }
 
     public static void main(String[] args) {

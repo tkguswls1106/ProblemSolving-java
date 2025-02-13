@@ -37,7 +37,7 @@ public class TwoPointer_PrefixSum_BOJ_2003 {
         for(int i=0; i<n; i++) {
             arr[i] = Integer.parseInt(stt.nextToken());
         }
-        arr[n] = 0;  // 투포인터의 누적합 계산시, 끝 인덱스 확인을 위함. 반드시 맨뒤에 넣을것!!!
+        arr[n] = 0;  // 투포인터의 누적합 계산시, 끝 인덱스 확인을 위해 맨뒤에 추가할것. (추가하지 않을시, end가 끝에 도달했을때 start의 단독sum값을 확인하지않고 while문이 종료됨.)
 
         int start = 0, end = 0;
         int sum = 0, cnt = 0;
