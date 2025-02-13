@@ -2,6 +2,7 @@ import java.util.*;
 import java.io.*;
 
 // [ 슬라이딩 윈도우 (Sliding Window) with 투 포인터 (Two Pointer) ]
+// 슬라이딩 윈도우의 기초 문제.
 
 // [ 누적합 vs 슬라이딩윈도우 vs 안쪽방향문제 (+ 특징) ]
 // - 누적 합 : 누적합 덧셈 O -> new int[n+1] / 포인터들은 모두 앞에서 뒤 방향으로 이동 -> start<=end / end++ 사용.
