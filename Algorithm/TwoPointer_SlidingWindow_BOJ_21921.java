@@ -40,6 +40,7 @@ public class TwoPointer_SlidingWindow_BOJ_21921 {
                 cnt++;
             }
 
+            // [ 슬라이딩 윈도우 : 다른 투포인터 방식과는 달리, if~else 모든 조건에서 포인터(둘다)를 이동해야함. ]
             // 현재 구간의 앞을 제거. (첫 요소)
             sum -= arr[start];
             start++;
