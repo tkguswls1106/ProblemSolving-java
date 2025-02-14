@@ -10,36 +10,60 @@ import java.io.*;
 public class BinarySearch_LowerUpperBound_BOJ_10816 {
     public static int[] arr;
 
-    public static int lowerBound(int findNum) {  // 검색요소의 이상값이 처음 나타나는 위치의 index 반환. 
+    /*
+    // 검색요소의 동일값이 처음 나타나는 위치의 index 반환. (없으면 -1 반환)
+    public static int binarySearch(int findNum) {
         int left = 0;
         int right = arr.length - 1;
         while(left <= right) {
             int mid = (left + right) / 2;
+            if(arr[mid] > findNum) {
+                right = mid - 1;
+            }
+            else if(arr[mid] < findNum) {
+                left = mid + 1;
+            }
+            else {
+                return mid;  // 검색 성공.
+            }
+        }
+
+        return -1;  // 검색 실패.
+    }
+    */
+
+    // 검색요소의 이상값이 처음 나타나는 위치의 index 반환. (없으면 가까운 초과값 index 반환)
+    public static int lowerBound(int findNum) {
+        int left = 0;
+        int right = arr.length;  // 배열의 상한위치까지 탐색하므로, 'arr.length-1' 말고 'arr.length' 사용.
+        while(left < right) {  // 위치의 중복검사 무한루프를 방지하고자, 'left<=right' 말고 'left<right' 사용.
+            int mid = (left + right) / 2;
             if(arr[mid] >= findNum) {  // 이상값 검색
-                right = mid - 1;  // 더 앞의 위치에도 이상값 요소가 존재하는지 확인하기위함.
+                right = mid;  // 현재위치를 포함한 더 앞쪽의 탐색을 위해, 'mid-1' 말고 'mid' 사용.
             }
             else {
                 left = mid + 1;
             }
         }
 
-        return right;
+        return right;  // right=mid로 할당해두기 때문.
     }
 
-    public static int upperBound(int findNum) {  // 검색요소의 초과값이 처음 나타나는 위치의 index 반환. 
+    // 검색요소의 초과값이 처음 나타나는 위치의 index 반환. (없으면 가까운 초과값 index 반환 => 마지막 index+1 반환)
+    public static int upperBound(int findNum) {
         int left = 0;
-        int right = arr.length - 1;
-        while(left <= right) {
+        int right = arr.length;  // 배열의 상한위치까지 탐색하므로, 'arr.length-1' 말고 'arr.length' 사용.
+        while(left < right) {  // 위치의 중복검사 무한루프를 방지하고자, 'left<=right' 말고 'left<right' 사용.
             int mid = (left + right) / 2;
             if(arr[mid] > findNum) {  // 초과값 검색
-                right = mid - 1;  // 더 앞의 위치에도 초과값 요소가 존재하는지 확인하기위함.
+                right = mid;  // 현재위치를 포함한 더 앞쪽의 탐색을 위해, 'mid-1' 말고 'mid' 사용.
             }
             else {
                 left = mid + 1;
             }
         }
         
-        return right;
+        return right;  // right=mid로 할당해두기 때문.
     }
 
     public static void main(String[] args) throws IOException {
