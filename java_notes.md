@@ -94,7 +94,12 @@ public class Example {
 
 ### 기타
 
-- max값 선언 : `int maxValue = (int) 1e9;`
+- max 초기값 선언
+  - `int maxValue = (int) 1e9;` (+10억)
+  - `int maxValue = Integer.MAX_VALUE;` (약 +21억)
+- min 초기값 선언
+  - `int minValue = -1;` (-1 : 양수 max값 갱신 용도)
+  - `int minValue = Integer.MIN_VALUE;` (약 -21억)
 - 삼각형의 두 변 길이의 합은 항상 나머지 변보다 큼 : `side1 + side2 > side3`
 - 두 점을 이은 선분의 기울기 공식 : `double (y1-y2)/(x1-x2)`
 - 소수,짝수,홀수 공식
