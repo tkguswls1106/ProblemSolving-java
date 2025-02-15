@@ -18,7 +18,7 @@ public class BOJ_2230 {
         Arrays.sort(arr);  // 뽑을 수를 크기별로 탐색하기위해 정렬시킴.
 
         int start = 0, end = 0;
-        int minDiff = 2000000000;  // 문제에 명시된 범위로 인해, 1e9로 기재시 범위보다 작음.
+        int minDiff = 2000000000;  // 문제에 명시된 범위로 인해, 1e9로 기재시 범위보다 작음. (또는 'Integer.MAX_VALUE' 사용하여 21억까지 커버 가능함.)
         while(start<=end && end<arr.length) {  // 뽑기 중복 가능하므로, 기존 투포인터의 누적합 방식처럼 start'<='end 활용할것.
             int diff = arr[end] - arr[start];
             if(diff >= m) {
