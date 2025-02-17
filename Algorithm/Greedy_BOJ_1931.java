@@ -48,7 +48,7 @@ public class Greedy_BOJ_1931 {
         int cnt = 1;
 
         for(Pair task : pList) {
-            if(prevTask.end <= task.start) {  // '이전 회의 종료시간'보다 '다음 회의 시작시간'이 같거나 빨라야함.
+            if(prevTask.end <= task.start) {  // '이전 회의 종료시각'이 '다음 회의 시작시각'보다 같거나 빨라야함. (회의가 겹치지않기위한 성립 조건)
                 cnt++;
                 prevTask = task;
             }
