@@ -35,7 +35,7 @@ public class Subset_SHJ {
         selected.add(arr[cnt]);  // 부분집합 코드에서는 cnt가 인덱스 역할도 하며 모든 원소를 넣고 빼봄.
         sub(cnt+1);
 
-        selected.remove(selected.size()-1);
+        selected.remove(selected.size()-1);  // 만약 전역변수가 아닌, 합계 등을 재귀 파라미터로 관리하는 문제라면, 제거없이 유지할 수도 있음. (ex. BOJ_1208 문제)
         sub(cnt+1);  // 부분집합은 여기서 한번더 호출함.
     }
 
