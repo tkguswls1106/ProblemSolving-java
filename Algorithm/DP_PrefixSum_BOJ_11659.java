@@ -1,6 +1,6 @@
 // < 성공 방법 1 - Ver.1 (개선 전, 알고리즘 직관적인 코드) >
-// arr[][] 배열과 dp[][] 배열을 모두 사용하는 방법.
-// => 'arr[][] 배열 미사용' 방법보다 공간복잡도가 비효율적이지만, 알고리즘 파악에 보다 직관적임.
+// arr[] 배열과 dp[] 배열을 모두 사용하는 방법.
+// => 'arr[] 배열 미사용' 방법보다 공간복잡도가 비효율적이지만, 알고리즘 파악에 보다 직관적임.
 // (개념 정리를 위해, 이 방안을 채택하여 주요 코드로 기재함.)
 
 import java.util.*;
@@ -66,8 +66,8 @@ public class DP_PrefixSum_BOJ_11659 {
 
 /*
 // < 성공 방법 1 - Ver.2 (개선 후, 공간복잡도 우수한 코드) >
-// dp[][] 배열만 사용하는 방법. (arr[][] 배열 미사용)
-// => 'arr[][] 배열과 dp[][] 배열을 모두 사용' 방법보다 알고리즘의 직관성이 떨어지지만, 공간복잡도가 보다 효율적임.
+// dp[] 배열만 사용하는 방법. (arr[] 배열 미사용)
+// => 'arr[] 배열과 dp[] 배열을 모두 사용' 방법보다 알고리즘의 직관성이 떨어지지만, 공간복잡도가 보다 효율적임.
 
 import java.util.*;
 import java.io.*;
@@ -79,7 +79,7 @@ public class DP_PrefixSum_BOJ_11659 {
 
         int n = Integer.parseInt(stt.nextToken());
         int m = Integer.parseInt(stt.nextToken());
-        int dp[] = new int[n+1];  // arr[][] 배열 없이, dp[][] 배열만 단독 사용. (공간복잡도 우수)
+        int dp[] = new int[n+1];  // arr[] 배열 없이, dp[] 배열만 단독 사용. (공간복잡도 우수)
 
         stt = new StringTokenizer(br.readLine());
         for(int i=1; i<=n; i++) {
