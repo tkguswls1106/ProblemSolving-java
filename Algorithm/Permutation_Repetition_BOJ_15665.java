@@ -11,6 +11,7 @@ import java.util.*;
 // ==> 입력받은 배열의 중복제거 및 오름차순 정렬 후 시작할것.
 // ==> 풀이방법 1. 입력값들을 TreeSet에 담고, List로 변환.
 // ==> 풀이방법 2. 입력값들을 배열 또는 리스트에 담고, stream & distinct & sorted 적용.
+// + etc) 예시로 출력에 '1 9'와 '9 1'이 모두 존재하면 조합이 아닌 순열임. (역순은 해당 X. 모든 순열 문제에 '1 9'와 '9 1'이 모두 존재하는것은 아님.)
 
 public class Permutation_Repetition_BOJ_15665 {
     public static int n, m;
