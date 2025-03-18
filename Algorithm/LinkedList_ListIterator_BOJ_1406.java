@@ -2,6 +2,17 @@ import java.util.*;
 import java.io.*;
 
 // [ 연결리스트(LinkedList) + ListIterator ]
+// - 개념 특징 :
+// | 0 | 1 | 2 | 3 | 4 |
+// |: 커서, 0~4: 실제 요소값
+// 현재 커서는 커서 뒤(오른쪽)의 요소를 가리킴. (= |0, |1, |2, |3, |4)
+// * iter.add(값) :
+// 커서 앞(왼쪽)에 새로운 요소를 삽입. (= 현재 커서의 요소를 뒤로 밀고, 그 자리에 삽입.)
+// ex) 커서가 |1 일때 add(9) -> |0 |9 |1 |2 |3 |4 -> 이후 커서는 그대로 기존 |1를 가리킴.
+// * iter.remove() :
+// 커서 뒤(오른쪽)의 요소를 삭제. (= 현재 커서의 요소를 삭제.)
+// 단, remove() 호출 전에 반드시 iter.next() 또는 iter.previous()를 호출해야함.
+// ex) 커서가 |1 일때 remove() -> |0 |2 |3 |4 -> 이후 커서는 삭제위치로(앞으로) 밀려온 |2를 가리킴.
 
 public class LinkedList_ListIterator_BOJ_1406 {
     public static void main(String[] args) throws IOException {
