@@ -67,7 +67,7 @@ public class Tree_BOJ_1240 {
             betweenDist = Integer.parseInt(stt.nextToken());
 
             adj[start].add(new Point(end, betweenDist));  // 이렇게되면 adj[start]에 여러 Point가 쌓이므로, 차후엔 adj[주요인덱스][쌓이는만큼인덱스].x or .y 이런식으로 불러내야함.
-            adj[end].add(new Point(start, betweenDist));  // 이렇게되면 adj[start]에 여러 Point가 쌓이므로, 차후엔 adj[주요인덱스][쌓이는만큼인덱스].x or .y 이런식으로 불러내야함.
+            adj[end].add(new Point(start, betweenDist));  // 이렇게되면 adj[end]에 여러 Point가 쌓이므로, 차후엔 adj[주요인덱스][쌓이는만큼인덱스].x or .y 이런식으로 불러내야함.
         }
 
         while(m-- > 0) {
@@ -142,7 +142,7 @@ public class Tree_BOJ_1240 {
             betweenDist = Integer.parseInt(stt.nextToken());
 
             adj[start].add(new Point(end, betweenDist));  // 이렇게되면 adj[start]에 여러 Point가 쌓이므로, 차후엔 adj[주요인덱스][쌓이는만큼인덱스].x or .y 이런식으로 불러내야함.
-            adj[end].add(new Point(start, betweenDist));  // 이렇게되면 adj[start]에 여러 Point가 쌓이므로, 차후엔 adj[주요인덱스][쌓이는만큼인덱스].x or .y 이런식으로 불러내야함.
+            adj[end].add(new Point(start, betweenDist));  // 이렇게되면 adj[end]에 여러 Point가 쌓이므로, 차후엔 adj[주요인덱스][쌓이는만큼인덱스].x or .y 이런식으로 불러내야함.
         }
 
         while(m-- > 0) {
