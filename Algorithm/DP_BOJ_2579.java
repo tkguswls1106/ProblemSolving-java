@@ -60,10 +60,7 @@ public class DP_BOJ_2579 {
             dp[2] = stair[1] + stair[2];
         }
         if(3 <= n) {
-            // int dp1 = dp[3-1];
-            int dp2 = dp[3-2] + stair[3];
-            int dp3 = stair[3-1] + stair[3];  // dp[3-3] + stair[3-1] + stair[3]
-            dp[3] = Math.max(dp2, dp3);
+            dp[3] = Math.max(stair[1], stair[2]) + stair[3];
         }
 
         // - dp값 세팅 :
