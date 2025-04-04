@@ -60,15 +60,20 @@ public class DP_BOJ_2579 {
             dp[2] = stair[1] + stair[2];
         }
         if(3 <= n) {
-            dp[3] = Math.max(stair[1], stair[2]) + stair[3];
+            // int exclude3 = dp[2];  // 3위치를 포함하지않은 경우 (!!! 이 문제는 해당 X !!!)
+            int include3 = Math.max(stair[1], stair[2]) + stair[3];  // 3위치를 포함한 경우
+
+            // dp[3] = Math.max(exclude3, include3);  // (!!! 이 문제는 해당 X !!!)
+            dp[3] = include3;
         }
 
         // - dp값 세팅 :
         for(int i=4; i<=n; i++) {
-            // int dp1 = dp[i-1];
+            // int dp1 = dp[i-1];  // (!!! 이 문제는 해당 X !!!)
             int dp2 = dp[i-2] + stair[i];
             int dp3 = dp[i-3] + stair[i-1] + stair[i];
 
+            // dp[i] = Math.max(Math.max(dp1, dp2), dp3);  // (!!! 이 문제는 해당 X !!!)
             dp[i] = Math.max(dp2, dp3);
         }
 
