@@ -33,6 +33,7 @@ public class BOJ_2156 {
             dp[3] = Math.max(exclude3, include3);
         }
 
+        // dp값 세팅
         int dp1, dp2, dp3;
         for(int i=4; i<=n; i++) {
             dp1 = dp[i-1];
