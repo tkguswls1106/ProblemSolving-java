@@ -32,10 +32,10 @@ public class BOJ_11052 {
         }
         // 아래 방식도 가능하긴함.
         /*
-        for(int cur=1; cur<=n; cur++) {  // 필수 카드 선택
+        for(int cur=1; cur<=n; cur++) {  // 필수 카드팩 선택
             int pickCnt = cur;
             int pickValue = arr[cur];
-            for(int i=1; i<=n; i++) {  // 나머지 카드 여러개 선택
+            for(int i=1; i<=n; i++) {  // 나머지 카드팩들 중 여러개 선택
                 int restN = i - pickCnt;
                 if(restN < 0) continue;
                 dp[i] = Math.max(dp[i], dp[restN] + pickValue);
