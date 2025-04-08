@@ -4,8 +4,8 @@ import java.io.*;
 // - 알고리즘 : DP
 
 public class BOJ_11052 {
-    public static int[] arr = new int[10002];
-    public static int[] dp = new int[10002];
+    public static int[] arr = new int[1002];
+    public static int[] dp = new int[1002];
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -24,12 +24,24 @@ public class BOJ_11052 {
         dp[1] = arr[1];
 
         // - dp값 세팅 :
-        for(int i=1; i<=n; i++) {
+        for(int i=2; i<=n; i++) {
             for(int cur=1; cur<=i; cur++) {
                 int curPrice = arr[cur] + dp[i-cur];
                 dp[i] = Math.max(dp[i], curPrice);
             }
         }
+        // 아래 방식도 가능하긴함.
+        /*
+        for(int cur=1; cur<=n; cur++) {  // 필수 카드 선택
+            int pickCnt = cur;
+            int pickValue = arr[cur];
+            for(int i=1; i<=n; i++) {  // 나머지 카드 여러개 선택
+                int restN = i - pickCnt;
+                if(restN < 0) continue;
+                dp[i] = Math.max(dp[i], dp[restN] + pickValue);
+            }
+        }
+        */
 
         System.out.print(dp[n]);
     }
