@@ -468,7 +468,7 @@ while(stt.hasMoreTokens()) {  // (반환타입: boolean)
 - LinkedList 선언 : `LinkedList<Integer> list = new LinkedList<>();`
 - LinkedList 메소드
     - `list.addFirst(요소값)` , `addLast(요소값)` , `add(인덱스,요소값)`
-    - `list.removeFirst(요소값)` , `removeLast(요소값)` , `remove(인덱스)`
+    - `list.removeFirst()` , `removeLast()` , `remove(인덱스)`
 - ArrayList vs LinkedList : LinkedList가 ArrayList보다 조회는 느리지만 삽입/삭제는 빠름
 
 ### Stream
