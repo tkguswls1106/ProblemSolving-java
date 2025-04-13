@@ -12,8 +12,9 @@ import java.util.*;
 // 10진수 숫자 num을 이진수로 나타냈을때, 오른쪽기준 n번째 비트를 1로 설정.
 // # num &= ~(1 << n);
 // 10진수 숫자 num을 이진수로 나타냈을때, 오른쪽기준 n번째 비트를 0으로 설정.
-// # if(num & (1 << n)){}
+// # if((num & (1 << n)) != 0){}
 // 10진수 숫자 num을 이진수로 나타냈을때, 오른쪽기준 n번째 비트가 1인지 검사.
+// ==> 참고로 int가 아닌 long 타입을 사용할 경우, 1 대신 1L을 사용할것.
 
 class Solution {   
     public String[] solution(int n, int[] arr1, int[] arr2) {
