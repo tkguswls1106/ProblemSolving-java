@@ -32,7 +32,7 @@ public class Sort_BOJ_1431 {
             list.add(inputStr);
         }
 
-        // List 커스텀 정렬
+        // - List(리스트) 커스텀 정렬 :
         Collections.sort(list, new Comparator<String>() {  // !!! 주의사항: Comparable 아니며, ()를 붙여주어야함. !!!
             @Override
             public int compare(String a, String b) {  // !!! 주의사항: compareTo 아니며, 파라미터 변수가 하나 더 들어감. !!!
@@ -47,6 +47,11 @@ public class Sort_BOJ_1431 {
                 }
             }
         });
+        // - Array(배열) 커스텀 정렬 :
+        // Collections.sort 대신 Arrays.sort 사용할것.
+        // int[] arr : 커스텀 선언 불가능 X
+        // Integer[] arr : 커스텀 선언 가능 O
+        // int[][] arr : 커스텀 선언 가능 O => 'new Comparator<int[]>()' 사용.
 
         for(String str : list) {
             stb.append(str).append("\n");
