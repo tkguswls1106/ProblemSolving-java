@@ -43,8 +43,21 @@ public class Greedy_BOJ_1931 {
         }
         Collections.sort(pList);
 
+        // !!! 성능개선 버전 !!!
         Pair prevTask = pList.get(0);
-        pList.remove(0);
+        int cnt = 1;
+
+        for(int i=1; i<pList.size(); i++) {
+            Pair task = pList.get(i);
+            if(prevTask.end <= task.start) {  // '이전 회의 종료시각'이 '다음 회의 시작시각'보다 같거나 빨라야함. (회의가 겹치지않기위한 성립 조건)
+                cnt++;
+                prevTask = task;
+            }
+        }
+
+        /*
+        Pair prevTask = pList.get(0);
+        pList.remove(0);  // 성능 저하 : 시간복잡도 O(n)
         int cnt = 1;
 
         for(Pair task : pList) {
@@ -53,6 +66,7 @@ public class Greedy_BOJ_1931 {
                 prevTask = task;
             }
         }
+        */
 
         System.out.print(cnt);
     }
