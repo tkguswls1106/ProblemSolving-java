@@ -24,6 +24,7 @@ public class BinarySearch_ParametricSearch_BOJ_1654 {
         long curN = 0;  // 잘려서 나온 총 랜선의 개수 (그래프 끝으로 갈수록 2^31까지 무한정으로 늘어나기에, long 자료형이어야만 함.)
         for(int lan : lanList) {
             curN += (lan / cutLan);
+            if(curN >= n) break;  // 성능 최적화
         }
 
         // curN이 더 크다는 건 cutLan이 작다는 의미

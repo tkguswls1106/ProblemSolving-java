@@ -31,6 +31,7 @@ public class BinarySearch_ParametricSearch_BOJ_2110 {
             if(nextDist >= minDist) {  // 거리 충족. 공유기 설치 가능.
                 prevHouseIdx = i;
                 cnt++;
+                if(cnt >= c) break;  // 성능 최적화
             }
         }
 
