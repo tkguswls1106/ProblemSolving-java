@@ -1,5 +1,5 @@
 // < 성공 방법 1 >
-// - 알고리즘: 우선순위 큐 (+ 기존 Array sort)
+// - 알고리즘: 우선순위큐 (+ 기존 Array sort)
 
 import java.util.*;
 
@@ -64,7 +64,7 @@ class Solution {
 
 /*
 // < 성공 방법 2 >
-// - 알고리즘: 우선순위 큐 (+ 신규 TreeMap)
+// - 알고리즘: 우선순위큐 (+ 신규 TreeMap)
 
 import java.util.*;
 

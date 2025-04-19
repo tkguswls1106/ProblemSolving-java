@@ -9,7 +9,7 @@ public class BOJ_2869 {
         // 'Scanner의 nextLine()'이 'BufferedReader의 readLine()'보다 느림을 확인할 수 있었음.
         // - Scanner의 nextLine() : 평균 100ms 이상
         // - BufferedReader의 readLine() : 평균 100ms 이하
-        // ==> BufferedReader 사용을 채택하여 리팩토링.
+        // ==> BufferedReader 방식을 채택하여 리팩토링.
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer stt = new StringTokenizer(br.readLine());
 
