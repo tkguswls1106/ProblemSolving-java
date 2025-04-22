@@ -435,6 +435,13 @@ stb.reverse();
 String str = stb.toString();
 ```
 
+### Tip
+
+- 초기화
+    - `new 연산` 대신 `setLength(0)` 사용 고려
+- 빈 상태 확인
+    - `stb.isEmpty()`는 Java 15부터 지원되므로, `stb.length() > 0` 사용 권장
+
 <br>
 
 ## StringTokenizer

@@ -28,7 +28,7 @@ public class BOJ_2529 {
         for(int i=0; i<10; i++) {  // num
             if(visited[i] == true) continue;
             
-            if(selectedStb.length() > 0) {  // 백준의 java11 컴파일러에서는 'if(!selectedStb.isEmpty())' 사용 시, 컴파일 에러가 남.
+            if(selectedStb.length() > 0) {  // 백준의 Java11 컴파일러에서는 'if(!selectedStb.isEmpty())' 사용 시, 컴파일 에러가 남. Java15 이상부터 가능.
                 char lastCh = selectedStb.charAt(selectedStb.length()-1);
                 if(isTrue(lastCh, chArr[cnt-1], i) == false) continue;
             }
