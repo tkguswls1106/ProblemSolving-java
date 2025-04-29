@@ -38,7 +38,7 @@ public class BOJ_1422 {
         // ==> O(20 * nlog(n))
 
         for(int i=0; i<list.size(); i++) {
-            stb.append(list.get(i));  // 문자열 추가 시
+            stb.append(list.get(i));  // 문자열 append 시, 10억 숫자 = 10자리 = O(10)씩 적용.
         }
         // ==> O(n * 10자리) = O(n)
 
