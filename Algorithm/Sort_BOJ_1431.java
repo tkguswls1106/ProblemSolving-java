@@ -9,6 +9,34 @@ import java.io.*;
 // return str1.compareTo(str2); ==> 반환값이 음수(int)이므로, 오름차순 정렬.
 // return str2.compareTo(str1); ==> 반환값이 양수(int)이므로, 내림차순 정렬.
 
+// - 추가 Tip :
+/*
+// ◦ compareTo 비교 결과 :
+// 'str1.compareTo(str2) > 0'인 경우, str1 > str2
+// 'str1.compareTo(str2) < 0'인 경우, str1 < str2
+// 'str1.compareTo(str2) == 0'인 경우, str1 == str2
+
+// ◦ 커스텀 방법 1 :
+Collections.sort(strList, (a, b) -> (b + a).compareTo(a + b));
+
+// ◦ 커스텀 방법 2 :
+Collections.sort(strList, (a, b) -> {
+    String ab = a + b;
+    String ba = b + a;
+    return ba.compareTo(ab);
+});
+
+// ◦ 커스텀 방법 3 :
+Collections.sort(strList, new Comparator<String>() {
+    @Override
+    public int compare(String a, String b) {
+        String ab = a + b;
+        String ba = b + a;
+        return ba.compareTo(ab);
+    }
+});
+*/
+
 public class Sort_BOJ_1431 {
     public static int getSum(String str) {
         int sum = 0;

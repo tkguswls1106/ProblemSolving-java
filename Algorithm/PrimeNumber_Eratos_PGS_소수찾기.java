@@ -7,7 +7,7 @@ import java.util.*;
 // i=2부터 시작하여 범위내에서 i의 배수를 모두 제거해주고, i++을 해가며 남은것들에 반복해서 i의 배수를 제거함.
 // 그렇게하면 최종적으로 남은 숫자범위내에는 소수만 남게 됨.
 
-// - 추가 Tip:
+// - 추가 Tip :
 /*
 // 특정 숫자의 소수 확인 메소드
 public static boolean isPrimeNumber(int num) {
