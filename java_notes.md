@@ -305,8 +305,22 @@ boolean isExist = str.contains(String.valueOf(ch));
 - equals
 
 ```java
-// 비교 (반환타입: boolean)
-boolean isSame = str1.equals(str2);  // true;
+// 동등성 비교 (반환타입: boolean)
+boolean isSame = str1.equals(str2);  // true
+```
+
+- compareTo
+
+```java
+// 사전식 비교 (반환타입: int)
+int compareResult = str1.compareTo(str2);
+
+// - 비교 결과 :
+// 'str1.compareTo(str2) > 0'인 경우 : str1 > str2
+// 'str1.compareTo(str2) < 0'인 경우 : str1 < str2
+// 'str1.compareTo(str2) == 0'인 경우 : str1 == str2
+// (VSCode 기준 출력값 : 1,-1,0)
+// 참고로 "aa" < "aaa"
 ```
 
 - repeat
