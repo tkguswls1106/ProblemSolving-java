@@ -14,7 +14,8 @@ import java.util.stream.*;  // Collectors
 
 // - equals() 및 hashCode() 특이사항 :
 // 만약 Set,Map 등 컬렉션에서의 중복검사 용도가 아닌, 단순히 두 객체의 필드값 비교를 목적으로 한다면,
-// hashCode() 없이 equals()만 재정의해도 'pairObj1.equals(pairObj2) == true'처럼 성공적인 '값'비교가 가능함.
+// equals()와 hashCode()를 모두 재정의하되, hashCode()는 'return 1;'처럼 고정된 동일 해시값을 반환하도록 하면 됨.
+// 그렇게 하면 오직 equals() 기준으로만 비교하게 되어, 'pairObj1.equals(pairObj2) == true'처럼 성공적인 '값'비교가 가능함.
 
 class Solution {
     public static class Pair implements Comparable<Pair> {  // !!! 주의사항: 주의사항을 위에 기재해두었음. !!!
@@ -55,6 +56,7 @@ class Solution {
         @Override
         public int hashCode() {
             return Objects.hash(num, dist);  // 해시 코드 생성 (필드'값'을 기준으로 부여. HashSet,HashMap 등의 key 중복방지.)
+            // !!! 만약 필드값 비교만 진행하고 싶다면, 이를 'return 1;'처럼 고정된 동일 해시값을 반환하면 됨 !!!
         }
         
         // - compareTo 오버라이딩 경우: 커스텀 정렬, TreeSet, TreeMap
