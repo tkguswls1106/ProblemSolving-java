@@ -908,6 +908,40 @@ arr[1] = p2;
 System.out.println(arr[0].x);
 ```
 
+### BigInteger
+
+- java.math.BigInteger 소속 클래스
+- long 타입의 범위를 넘는 무한대처럼 매우 큰 수를 다룰 때 사용.
+- 단, > < 등의 비교 연산자를 적용할 수 없고 대신 compareTo() 메소드를 이용해야함.
+- 단, + - 등의 산술 연산자를 적용할 수 없고 대신 내장 메소드를 이용해야함.
+
+```java
+// 선언 (? -> BigInteger)
+BigInteger bNum1 = BigInteger.valueOf(15000);  // int or long -> BigInteger
+BigInteger bNum2 = new BigInteger("10000");  // String -> BigInteger
+
+// 변환 (BigInteger -> ?)
+int iNum = bNum1.intValue();  // BigInteger -> int
+long lNum = bNum1.longValue();  // BigInteger -> long
+float fNum = bNum1.floatValue();  // BigInteger -> float
+double dNum = bNum1.doubleValue();  // BigInteger -> double
+String sNum = bNum1.toString();  // BigInteger -> String
+
+// 객체식 비교 (반환타입: int)
+int compareResult = bNum1.compareTo(bNum2);
+if(compareResult > 0) { }  // bNum1 > bNum2 일때
+
+// 산술연산 메소드 (반환타입: BigInteger)
+BigInteger result1 = bNum1.add(bNum2);  // 덧셈 : bNum1 + bNum2
+BigInteger result2 = bNum1.subtract(bNum2);  // 뺄셈 : bNum1 - bNum2
+BigInteger result3 = bNum1.multiply(bNum2);  // 곱셈 : bNum1 * bNum2
+BigInteger result4 = bNum1.divide(bNum2);  // 나눗셈(몫) : bNum1 / bNum2
+BigInteger result5 = bNum1.remainder(bNum2);  // 나눗셈(나머지) : bNum1 % bNum2
+
+// 참고로 일반적인 System.out.print(result) 방식으로도 출력 가능.
+// - result 1~5 출력 : 25000, 5000, 150000000, 1, 5000
+```
+
 ### 진수 변환
 
 ```java
