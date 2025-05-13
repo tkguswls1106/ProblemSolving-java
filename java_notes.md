@@ -12,7 +12,7 @@
 7. &nbsp;&nbsp;[Array & List](#array--list)
 8. &nbsp;&nbsp;[Set](#set)
 9. &nbsp;&nbsp;[Map](#map)
-10. &nbsp;&nbsp;[기타](#기타)
+10. &nbsp;&nbsp;[기타](#기타-1)
 </details>
 
 <br>
