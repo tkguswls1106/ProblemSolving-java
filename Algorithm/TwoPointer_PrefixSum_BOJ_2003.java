@@ -43,6 +43,7 @@ public class TwoPointer_PrefixSum_BOJ_2003 {
         int sum = 0, cnt = 0;
         while(start<=end && end<arr.length) {  // 누적합이므로 웬만해서는 start'<='end 활용을 추천.
             if(sum == m) {
+                // !!! 참고로 이때 end는 'sum += arr[end++]'로 인해 +1된 상태이므로, 구간 인덱스를 출력하는 등의 다른 문제에서는 end-1을 사용해야함 !!!
                 cnt++;
                 sum -= arr[start];
                 start++;
