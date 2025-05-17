@@ -56,8 +56,8 @@ class Solution {
         for(int[] wire : wires) {
             int num1 = wire[0];
             int num2 = wire[1];
-            adj[num1].remove(Integer.valueOf(num2));
-            adj[num2].remove(Integer.valueOf(num1));
+            adj[num1].remove(Integer.valueOf(num2));  // int 인덱스가 아닌 값으로 검색하여, 나온 첫번째 요소를 제거.
+            adj[num2].remove(Integer.valueOf(num1));  // int 인덱스가 아닌 값으로 검색하여, 나온 첫번째 요소를 제거.
             
             List<Integer> cntList = new ArrayList<>();
             for(int i=1; i<=n; i++) {

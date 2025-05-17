@@ -16,7 +16,7 @@ class Solution {
         @Override
         public int compareTo(Task b) {
             if(this.time != b.time) {
-                return this.time - b.time;
+                return this.time - b.time;  // 실상 이 정렬기준만 있으면 됨.
             }
             else {
                 return this.request - b.request;
