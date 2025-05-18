@@ -1,7 +1,7 @@
 import java.util.*;
 
 // [ 매개변수 탐색 (Parametric Search) with 이분 탐색 - min 아닌 max 결정함수 방식 ]
-// - 문제 Tip :
+// - 코드 특징 :
 // 최소를 구해야하므로, 반대로 결정함수에서 minTimeSum이 아닌 maxTimeSum을 사용.
 // 또한 이러한 max 방식은 while문 조건과 범위를 좁히는 과정도 기존 min 방식과는 다름.
 
