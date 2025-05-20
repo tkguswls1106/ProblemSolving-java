@@ -2,8 +2,12 @@ import java.util.*;
 import java.io.*;
 import java.awt.Point;
 
-// - 알고리즘: BFS
-// - 문제 Tip: 치즈가 아닌곳을 BFS로 순회해서 visited를 적용시키면, 외곽 외에는 더이상 안쪽으로 접근할 수 없어서 테두리만 확인이 가능해짐.
+// - 알고리즘 : BFS
+// - 유사 문제 :
+// 참고로 이 문제는 'BFS_PGS_아이템줍기' 문제와 달리, 테두리의 꼭짓점 경로를 따질 필요 없이
+// 그저 주어진 좌표중 외부와 닿는 겉면만을 판별하면 되므로, 좌표 확장이 필요없음. 
+// - 문제 Tip :
+// 치즈가 아닌곳을 BFS로 순회해서 visited를 적용시키면, 외곽 외에는 더이상 안쪽으로 접근할 수 없어서 테두리만 확인이 가능해짐.
 
 public class BOJ_2636 {
     public static int n, m;
