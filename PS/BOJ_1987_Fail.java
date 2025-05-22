@@ -1,6 +1,7 @@
 // < 실패 방법 >
 // - 답은 맞는듯하나, 메모리 초과로 실패.
 // - 알고리즘 : BFS + 다중 HashSet
+// ('DFS_BackTracking_BOJ_1987' 성공 알고리즘 : DFS + 백트래킹 + 전역 visited)
 
 import java.util.*;
 import java.io.*;
