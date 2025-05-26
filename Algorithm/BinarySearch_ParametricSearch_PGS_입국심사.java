@@ -21,6 +21,9 @@ class Solution {
     
     public long solution(int n, int[] times) {
         Arrays.sort(times);
+        // 이는 만약 'BOJ_3079' 문제처럼 배열 요소들이 직접 입력으로 주어진다면,
+        // 굳이 정렬할 필요없이, 입력값들 중 최솟값과 최댓값을 비교해 얻어서,
+        // 'left = (long) 최솟값;', 'right = (long) 최댓값 * n;'으로 초기화하고 시작해도됨.
 
         // < 방식 1 >
         // left, right, mid 값 = 심사를 위해 주어지는 시간합계 범위를 의미.
