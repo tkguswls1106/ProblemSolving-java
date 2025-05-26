@@ -1,6 +1,6 @@
 # Problem Solving - Java
 ### Algorithm for CodingTest
-- **Java 정리 노트** : <a href="https://github.com/tkguswls1106/ProblemSolving-java/blob/master/java_notes.md">Click!</a>
+- **Java 정리 노트** : <a href="https://github.com/tkguswls1106/ProblemSolving-java/blob/master/java_notes.md">Click!</a><img src="https://github.com/user-attachments/assets/e24273fe-cd3f-43ea-8c36-e58916edda8f" />
 
 ### Notice
 - C++에서 Java로 전환하며 Repo를 옮기게 되었음.
