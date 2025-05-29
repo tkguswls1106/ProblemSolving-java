@@ -942,6 +942,32 @@ BigInteger result5 = bNum1.remainder(bNum2);  // 나눗셈(나머지) : bNum1 % 
 // - result 1~5 출력 : 25000, 5000, 150000000, 1, 5000
 ```
 
+### 소수점 처리
+
+```java
+// 올림 (반환타입: double)
+double dNum = Math.ceil(3.14);  // 4.0
+
+// 내림 (반환타입: double)
+double dNum = Math.floor(3.14);  // 3.0
+
+// 기본 반올림 - 소수점 첫째 자리에서 (반환타입: long)
+long lNum = Math.round(3.14);  // 3
+long lNum = Math.round(3.54);  // 4
+
+// 자리수 반올림 - 소수점 둘째 자리에서 (반환타입: double)
+double dNum = Math.round(3.41 * 10) / 10.0;  // 3.4
+double dNum = Math.round(3.414 * 10) / 10.0;  // 3.4
+double dNum = Math.round(3.45 * 10) / 10.0;  // 3.5
+double dNum = Math.round(3.454 * 10) / 10.0;  // 3.5
+
+// 자리수 반올림 - 소수점 셋째 자리에서 (반환타입: double)
+double dNum = Math.round(3.441 * 100) / 100.0;  // 3.44
+double dNum = Math.round(3.4414 * 100) / 100.0;  // 3.44
+double dNum = Math.round(3.445 * 100) / 100.0;  // 3.45
+double dNum = Math.round(3.4454 * 100) / 100.0;  // 3.45
+```
+
 ### 진수 변환
 
 ```java
