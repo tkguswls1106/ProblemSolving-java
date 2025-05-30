@@ -15,10 +15,11 @@ class Solution {
         int minLen = Integer.MAX_VALUE;
         while(start<=end && end<arr.length) {
             if(sum == k) {
-                int len = end - start;
+                int realEnd = end - 1;  // 이때 end는 'sum += arr[end++]'로 인해 +1된 상태이므로, end-1 값을 사용해야함.
+                int len = realEnd - start + 1;
                 if(len < minLen) {
                     idx1 = start;
-                    idx2 = end-1;  // 이때 end는 'sum += arr[end++]'로 인해 +1된 상태이므로, end-1 값을 사용해야함.
+                    idx2 = realEnd;
                     minLen = len;
                 }
                 sum -= arr[start];
