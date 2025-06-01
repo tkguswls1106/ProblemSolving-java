@@ -103,6 +103,13 @@ public class Example {
   - `int minValue = Integer.MIN_VALUE;` (약 -21억)
 - 삼각형의 두 변 길이의 합은 항상 나머지 변보다 큼 : `side1 + side2 > side3`
 - 두 점을 이은 선분의 기울기 공식 : `double (y1-y2)/(x1-x2)`
+- 순열,조합 공식
+  - 순열 개수
+    - nPr = n! / (n-r)! = `n x (n-1) x (n-2) .. 총 r번 곱셈`
+    - ex)&nbsp;&nbsp;₇P₃ = 7 x 6 x 5&nbsp;&nbsp;..&nbsp;&nbsp;7부터 시작해서 총 3번 곱셈
+  - 조합 개수
+    - nCr = n! / {(n-r)! x r!} = `nPr / r!`
+    - ex)&nbsp;&nbsp;₇C₃ = ₇P₃ / 3! = (7 x 6 x 5) / (3 x 2 x 1)
 - 소수,짝수,홀수 공식
   - 소수의 합
     - 가능 : `4이상의 짝수 = 소수 + 소수` (골드바흐의 추측)
