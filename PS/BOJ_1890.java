@@ -5,7 +5,7 @@ import java.io.*;
 
 public class BOJ_1890 {
     public static int[][] arr = new int[102][102];
-    public static long[][] dp = new long[102][102];  // 해당 위치에 도착하는 경로의 개수 ('경로의 개수는 263-1보다 작거나 같다.' 조건을 고려해 long타입 설정.)
+    public static long[][] dp = new long[102][102];  // 해당 위치에 도착하는 경로의 개수 ('경로의 개수는 2^63-1보다 작거나 같다.' 조건을 고려해 long타입 설정.)
     public static int[] dx = { 1, 0 };
     public static int[] dy = { 0, 1 };
 
