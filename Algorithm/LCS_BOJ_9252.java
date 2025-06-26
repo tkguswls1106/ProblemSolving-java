@@ -19,7 +19,7 @@ public class LCS_BOJ_9252 {
     public static int len1, len2;
     public static StringBuilder stb = new StringBuilder();
 
-    public static void appendLCS() {  // LCS 역추적 메소드
+    public static void traceLCS() {  // LCS 역추적 메소드
         String str = str1;  // '공통' 부분수열을 탐색할것이므로 str1 또는 str2 중 어느 문자열을 사용해도 무관함.
         int i = len1;
         int j = len2;
@@ -87,7 +87,7 @@ public class LCS_BOJ_9252 {
         }
 
         stb.append(dp[len1][len2]).append("\n");  // LCS의 길이
-        appendLCS();  // LCS (문자열)
+        traceLCS();  // LCS (문자열)
         System.out.print(stb.toString());
     }
 }
