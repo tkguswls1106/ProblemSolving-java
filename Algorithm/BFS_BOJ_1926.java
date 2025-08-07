@@ -3,6 +3,9 @@ import java.io.*;
 import java.awt.*;  // Point
 
 // [ BFS 그림 문제 (Flood Fill) - 기초 ]
+// - BFS vs 다익스트라 :
+// BFS 문제는 '단순 최단 이동거리 혹은 이동횟수를 구하는 것'를 목적으로 함.
+// 반면, 다익스트라 문제는 '각 이동 간의 비용을 고려해 최소한의 힘으로 가장 빠른 길을 찾는 것'을 목적으로 함.
 
 public class BFS_BOJ_1926 {  // 주의사항: 백준 제출시엔 Main 클래스로 네이밍 변경할것.
     public static int n, m;

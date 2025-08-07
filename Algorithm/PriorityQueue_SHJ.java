@@ -11,6 +11,7 @@ import java.awt.*;  // Point
 // * 우선순위가 가장 높은 원소 확인: O(1), 원소의 추가: O(logN), 우선순위가 가장 높은 원소 제거: O(logN)
 // * PriorityQueue는 Set보다 수행 속도가 빠르고 공간도 적게 차지하기때문에,
 //   PriorityQueue에서 제공하는 연산들만 필요할 경우에는, Set을 쓰는것보다 PriorityQueue를 쓰는게 좋다.
+// etc) 정렬 조건으로 'return 0;' 반환 시, 해당 if문에서는 정렬없이 삽입 순서 그대로 유지 가능함.
 
 public class PriorityQueue_SHJ {
     public static class Pair implements Comparable<Pair> {
