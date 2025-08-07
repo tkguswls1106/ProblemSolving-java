@@ -1,4 +1,5 @@
 import java.util.*;
+import java.awt.*;  // Point
 
 // [ 우선순위 큐 (Priority Queue) ]
 // - 개념 특징:
@@ -40,6 +41,16 @@ public class PriorityQueue_SHJ {
         System.out.println(stb.toString());
     }
 
+    public static void printPointPQ(PriorityQueue<Point> pq) {
+        StringBuilder stb = new StringBuilder();
+        while(!pq.isEmpty()) {
+            Point p = pq.poll();
+            String printStr = String.format("[%d %d] ", p.x, p.y);
+            stb.append(printStr);
+        }
+        System.out.println(stb.toString());
+    }
+
     public static void printPairPQ(PriorityQueue<Pair> pq) {
         StringBuilder stb = new StringBuilder();
         while(!pq.isEmpty()) {
@@ -64,7 +75,15 @@ public class PriorityQueue_SHJ {
                 }
             }
         });
-        PriorityQueue<Pair> pq4 = new PriorityQueue<>();
+        PriorityQueue<Point> pq4 = new PriorityQueue<>((a, b) -> {
+            if(a.x != b.x) {
+                return a.x - b.x;  // x 기준 오름차순
+            }
+            else {
+                return b.y - a.y;  // y 기준 내림차순
+            }
+        });
+        PriorityQueue<Pair> pq5 = new PriorityQueue<>();
         
         // pq1
         pq1.offer(5);
@@ -91,13 +110,23 @@ public class PriorityQueue_SHJ {
         printPQ(pq3);  // => -1 1 1 -5 5 8 -12
 
         // pq4
-        pq4.offer(new Pair(1, 3));
-        pq4.offer(new Pair(1, 4));
-        pq4.offer(new Pair(2, 2));
-        pq4.offer(new Pair(2, 2));
-        pq4.offer(new Pair(2, 7));
-        pq4.offer(new Pair(3, 1));
-        pq4.offer(new Pair(3, 8));
-        printPairPQ(pq4);  // => [1 4] [1 3] [2 7] [2 2] [2 2] [3 8] [3 1]
+        pq4.offer(new Point(1, 3));
+        pq4.offer(new Point(1, 4));
+        pq4.offer(new Point(2, 2));
+        pq4.offer(new Point(2, 2));
+        pq4.offer(new Point(2, 7));
+        pq4.offer(new Point(3, 1));
+        pq4.offer(new Point(3, 8));
+        printPointPQ(pq4);  // => [1 4] [1 3] [2 7] [2 2] [2 2] [3 8] [3 1]
+
+        // pq5
+        pq5.offer(new Pair(1, 3));
+        pq5.offer(new Pair(1, 4));
+        pq5.offer(new Pair(2, 2));
+        pq5.offer(new Pair(2, 2));
+        pq5.offer(new Pair(2, 7));
+        pq5.offer(new Pair(3, 1));
+        pq5.offer(new Pair(3, 8));
+        printPairPQ(pq5);  // => [1 4] [1 3] [2 7] [2 2] [2 2] [3 8] [3 1]
     }
 }
