@@ -2,6 +2,7 @@ import java.util.*;
 import java.io.*;
 
 // [ 배낭 문제 (냅색 Knapsack) with DP ]
+// - 개념 특징 :
 // https://sskl660.tistory.com/88
 // 위 링크의 사진 설명이 이해하기 용이해,
 // 추후 복습 시 개념 참고용으로 기재함.
