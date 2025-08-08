@@ -17,7 +17,7 @@ public class DP_Memoization_BOJ_9184 {
             return 1;  // 'return dp[a][b][c] = 1;'로 작성하면 틀림.
         }
         if(a>20 || b>20 || c>20) {
-            return dp[20][20][20] = memoW(20, 20, 20);  // 'return dp[a][b][c] = memoW(20, 20, 20)'로 작성하면 틀림.
+            return dp[20][20][20] = memoW(20, 20, 20);  // 'return dp[a][b][c] = memoW(20, 20, 20);'로 작성하면 틀림.
         }
         if(a<b && b<c) {
             return dp[a][b][c] = memoW(a, b, c-1) + memoW(a, b-1, c-1) - memoW(a, b-1, c);
