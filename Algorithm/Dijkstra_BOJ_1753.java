@@ -41,8 +41,9 @@ public class Dijkstra_BOJ_1753 {
                 return this.distSum - b.distSum;  // 간선 가중치 기준 오름차순
             }
             else {
-                return 0;  // 정렬없이 삽입 순서 그대로 유지함
+                return 0;  // 정렬없이 그대로 유지함
             }
+            // 또는 if문 없이 바로 'return this.distSum - b.distSum;'으로만 작성 가능.
         }
     }
 

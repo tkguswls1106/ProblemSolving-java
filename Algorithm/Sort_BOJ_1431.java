@@ -9,6 +9,7 @@ import java.io.*;
 // return str1.compareTo(str2); ==> 반환값이 음수(int)이므로, 오름차순 정렬.
 // return str2.compareTo(str1); ==> 반환값이 양수(int)이므로, 내림차순 정렬.
 // etc) 정렬 조건으로 'return 0;' 반환 시, 해당 if문에서는 정렬없이 삽입 순서 그대로 유지 가능함.
+//      또는 if문 없이 바로 'return 정렬기준;'으로만 작성할것.
 
 // - 추가 Tip :
 /*
