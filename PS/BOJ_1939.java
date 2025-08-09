@@ -44,14 +44,17 @@ public class BOJ_1939 {
         
         while(!pq.isEmpty()) {
             Node cur = pq.poll();
-            
-            // 맨처음에는 '-1 > Integer.MAX_VALUE' 조건임.
-            if(cur.getMaxDist() > cur.dist) continue;  // 주의: 현재 기준이므로 > 말고 >= 조건을 적용하면, 답 자체가 틀리게됨.
+
+            // 주의: 현재 기준임에도 > 말고 >= 조건을 적용하면, 답 자체가 틀리게됨.
+            if(cur.getMaxDist() > cur.dist) continue;  // 맨처음에는 '-1 > Integer.MAX_VALUE' 조건임.
 
             for(Node next : cur.getNextNodeList()) {
                 int minDist = Math.min(cur.dist, next.dist);  // 어차피 cur.dist 의미도 현재'까지 중에서' 최소거리값이니 문제없음.
 
-                if(next.getMaxDist() >= minDist) continue;  // 주의: 다음 기준이므로 >= 말고 > 조건을 적용하면, 메모리 초과로 틀리게됨.
+                // 주의: 다음 기준임에도 >= 말고 > 조건을 적용하면, 답은 맞으나 메모리 초과로 틀리게됨.
+                //      만약 '>' 부등호 사용 시, 거리가 같은 경우임에도 불필요하게 큐에 넣고 갱신을 시도해 메모리 초과가 발생할 수 있음.
+                //      따라서 이 next 조건문에서는 기존값을 새로 갱신할지 확인하는 용도이므로, '>=' 부등호로 필터링해주어야 함.
+                if(next.getMaxDist() >= minDist) continue;
 
                 pq.offer(new Node(next.idx, minDist));
                 distArr[next.idx] = minDist;
