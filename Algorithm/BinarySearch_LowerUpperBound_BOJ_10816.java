@@ -12,7 +12,31 @@ public class BinarySearch_LowerUpperBound_BOJ_10816 {
 
     /*
     // 검색요소의 동일값이 처음 나타나는 위치의 index 반환. (없으면 -1 반환)
-    public static int binarySearch(int findNum) {
+    public static int binarySearchFirst(int findNum) {
+        int left = 0;
+        int right = arr.length - 1;
+        int findResult = -1;
+        while(left <= right) {
+            int mid = (left + right) / 2;
+            if(arr[mid] == findNum) {
+                findResult = mid;  // 검색 성공.
+                right = mid - 1;
+            }
+            else if(arr[mid] > findNum) {
+                right = mid - 1;
+            }
+            else {  // (arr[mid] < findNum) 경우
+                left = mid + 1;
+            }
+        }
+
+        return findResult;  // -1 반환 시, 검색 실패.
+    }
+    */
+
+    /*
+    // 검색요소의 동일값이 나타나는 위치 중 임의의 index 반환. (없으면 -1 반환)
+    public static int binarySearchRandom(int findNum) {
         int left = 0;
         int right = arr.length - 1;
         while(left <= right) {
