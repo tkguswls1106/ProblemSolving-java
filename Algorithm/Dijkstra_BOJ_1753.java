@@ -7,20 +7,23 @@ import java.io.*;
 // 단, 이는 '가중치가 음수인 간선'이 없다는 전제를 기반으로 동작한다.
 // - 시간복잡도 :
 // 정점 개수가 V, 간선 개수가 E 일때
-// 이중 for문 방식은, 모든 정점 중에서 매 단계마다 미방문 정점의 최소 거리를 선형 탐색 => O(V^2) 느림.
+// 2중 for문 방식은, 모든 정점 중에서 매 단계마다 미방문 정점의 최소 거리를 선형 탐색 => O(V^2) 느림.
 // 우선순위큐 방식은, 큐 삽입/삭제가 O(logV)이고 이 작업이 간선만큼 최대 E번 발생 => O(ElogV) 빠름.
 // - 다익스트라 주의사항 :
 // 현재 기준에서는 'if(cur.getMinDistSum() < cur.distSum) continue;'처럼 < 부등호를 사용해야함. 만약 <= 사용하면 답 자체가 틀림.
 // 반면, 다음 기준에서는 'if(next.getMinDistSum() <= allDistSum) continue;'처럼 <= 부등호를 사용해야함. 만약 < 사용하면 답은 맞으나 메모리 초과가 발생해 틀림.
 // 왜냐하면 다음 기준은 기존값을 새로 갱신할지 확인하는 용도인데, < 부등호로 필터링한다면 거리가 같은 경우임에도 불필요하게 큐에 넣고 갱신을 시도하므로 메모리가 초과될 수 있음.
-// - BFS vs 다익스트라 :
-// BFS 문제는 '단순 최단 이동거리 혹은 이동횟수를 구하는 것'을 목적으로 함.
-// 반면, 다익스트라 문제는 '각 이동 간의 비용을 고려해 최소한의 힘으로 가장 빠른 길을 찾는 것'을 목적으로 함.
+// - BFS vs 다익스트라 vs 플로이드 워셜 :
+// * BFS : '단순 최단 이동거리 혹은 이동횟수를 구하는 것'을 목적으로 함.
+// * 다익스트라, 플로이드 워셜 : '각 이동 간의 비용을 고려해 최소한의 힘으로 가장 빠른 길을 찾는 것'을 목적으로 함.
+//   * 다익스트라 : '하나의 정점'에서 '다른 모든 정점'으로의 최단 경로를 구하는 알고리즘. 시간복잡도 O(ElogV)
+//   * 플로이드 워셜 : '모든 정점'에서 '다른 모든 정점'으로의 최단 경로를 구하는 알고리즘. 시간복잡도 O(V^3)
 
 public class Dijkstra_BOJ_1753 {
     public static int v, e, k;
     public static ArrayList<Node>[] adj = new ArrayList[20002];  // 실상 V+1 길이만큼만 선언하면 됨.
     public static int[] distSumArr = new int[20002];  // minDistSumArr. 실상 V+1 길이만큼만 선언하면 됨.
+    public static final int INF = Integer.MAX_VALUE;
 
     public static class Node implements Comparable<Node> {
         public int idx;  // nodeIdx
@@ -86,12 +89,12 @@ public class Dijkstra_BOJ_1753 {
         StringBuilder stb = new StringBuilder();
 
         StringTokenizer stt = new StringTokenizer(br.readLine());
-        v = Integer.parseInt(stt.nextToken());
-        e = Integer.parseInt(stt.nextToken());
-        k = Integer.parseInt(br.readLine());
+        v = Integer.parseInt(stt.nextToken());  // 정점의 개수
+        e = Integer.parseInt(stt.nextToken());  // 간선의 개수
+        k = Integer.parseInt(br.readLine());  // 시작 정점의 번호
         for(int i=1; i<=v; i++) {
             adj[i] = new ArrayList<>();
-            distSumArr[i] = Integer.MAX_VALUE;
+            distSumArr[i] = INF;
         }
 
         int start, end, betweenDist;
