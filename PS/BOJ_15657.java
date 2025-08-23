@@ -20,9 +20,7 @@ public class BOJ_15657 {
         }
         
         for(int i=start; i<n; i++) {
-            int num = allList.get(i);
-
-            selected.add(num);
+            selected.add(allList.get(i));
             comb(i, cnt+1);
 
             selected.remove(selected.size()-1);
@@ -39,6 +37,8 @@ public class BOJ_15657 {
         for(int i=0; i<n; i++) {
             allList.add(Integer.parseInt(stt.nextToken()));
         }
+        // 주의: 이 문제는 중복조합일뿐더러, 조건에 '입력될 N개의 자연수는 모두 다른 수'라고 명시되어 있으므로, 배열 내 중복제거는 필요 없음.
+        //      만약 필요하게 된다면 'Combination_BOJ_15664' 문제의 풀이처럼 처리하면 됨.
         Collections.sort(allList);
 
         comb(0, 0);
@@ -52,7 +52,6 @@ public class BOJ_15657 {
 // - 알고리즘: 중복순열 + 오름차순
 
 import java.util.*;
-import java.util.stream.*;
 import java.io.*;
 
 public class BOJ_15657 {
@@ -91,11 +90,9 @@ public class BOJ_15657 {
         for(int i=0; i<n; i++) {
             allList.add(Integer.parseInt(stt.nextToken()));
         }
-        allList = allList.stream()
-            .distinct()
-            .sorted()
-            .collect(Collectors.toList());
-        n = allList.size();  // 리스트 길이값 갱신
+        // 주의: 이 문제는 중복조합일뿐더러, 조건에 '입력될 N개의 자연수는 모두 다른 수'라고 명시되어 있으므로, 배열 내 중복제거는 필요 없음.
+        //      만약 필요하게 된다면 'Combination_BOJ_15664' 문제의 풀이처럼 처리하면 됨.
+        Collections.sort(allList);
 
         perm(0);
 
