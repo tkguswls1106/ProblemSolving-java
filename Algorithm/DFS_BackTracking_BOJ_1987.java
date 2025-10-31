@@ -11,6 +11,7 @@ import java.io.*;
 // 이처럼 DFS를 사용해야하지만 BFS의 탐색 특징도 필요할 경우,
 // DFS에 백트래킹을 함께 활용하면, 마치 BFS의 Queue에서 현재 좌표(cur)를 기준으로 사방을 탐색하듯,
 // DFS에서도 이전 좌표로 돌아가 다른 방향 경로도 마저 탐색해볼 수 있음.
+// - 유사 문제 : 'BOJ_1189' 문제
 
 public class DFS_BackTracking_BOJ_1987 {
     public static int n, m;
