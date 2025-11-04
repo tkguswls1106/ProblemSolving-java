@@ -26,7 +26,7 @@ public class BOJ_11051 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer stt = new StringTokenizer(br.readLine());
         int n = Integer.parseInt(stt.nextToken());
-        int r = Integer.parseInt(stt.nextToken());  // 문제에서는 k
+        int r = Integer.parseInt(stt.nextToken());  // 문제상으로는 k
 
         int combinationCnt = memoBP(n, r);
         System.out.print(combinationCnt);
