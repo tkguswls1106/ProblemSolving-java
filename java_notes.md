@@ -110,6 +110,8 @@ public class Example {
   - 조합 개수
     - nCr = n! / {(n-r)! x r!} = `nPr / r!`
     - ex)&nbsp;&nbsp;₇C₃ = ₇P₃ / 3! = (7 x 6 x 5) / (3 x 2 x 1)
+    - nCr = `(n-1)C(r-1) + (n-1)Cr` (이항계수 점화식)
+    - ex)&nbsp;&nbsp;₇C₁ = ₆C₀ + ₆C₁ = 1 + 6 = 7
 - 소수,짝수,홀수 공식
   - 소수의 합
     - 가능 : `4이상의 짝수 = 소수 + 소수` (골드바흐의 추측)
