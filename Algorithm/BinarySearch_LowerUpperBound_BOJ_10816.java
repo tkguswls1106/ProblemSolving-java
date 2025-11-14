@@ -56,7 +56,7 @@ public class BinarySearch_LowerUpperBound_BOJ_10816 {
     }
     */
 
-    // 검색요소의 이상값이 처음 나타나는 위치의 index 반환. (없으면 가까운 초과값 index 반환)
+    // 검색요소의 이상값(같거나 초과값)이 처음 나타나는 위치의 index 반환. (없으면 마지막 index+1 반환)
     public static int lowerBound(int findNum) {
         int left = 0;
         int right = arr.length;  // 배열의 상한위치까지 탐색하므로, 'arr.length-1' 말고 'arr.length' 사용.
@@ -73,7 +73,7 @@ public class BinarySearch_LowerUpperBound_BOJ_10816 {
         return right;  // right=mid로 할당해두기 때문.
     }
 
-    // 검색요소의 초과값이 처음 나타나는 위치의 index 반환. (없으면 가까운 초과값 index 반환 => 마지막 index+1 반환)
+    // 검색요소의 초과값이 처음 나타나는 위치의 index 반환. (없으면 마지막 index+1 반환)
     public static int upperBound(int findNum) {
         int left = 0;
         int right = arr.length;  // 배열의 상한위치까지 탐색하므로, 'arr.length-1' 말고 'arr.length' 사용.
