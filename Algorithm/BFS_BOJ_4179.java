@@ -3,6 +3,7 @@ import java.io.*;
 import java.awt.*;
 
 // [ BFS 지훈+불 문제 (Fire) ]
+// - 유사 문제 : 'BOJ_12851' 문제
 
 public class BFS_BOJ_4179 {
     public static int n, m;
@@ -43,7 +44,7 @@ public class BFS_BOJ_4179 {
                     return;
                 }
                 if(board[nx][ny] == 0 || distJ[nx][ny] > 0) continue;
-                if(distF[nx][ny] > 0 && distJ[cur.x][cur.y]+1 >= distF[nx][ny]) continue;  // 이미 불이 지나갔던 자리일때 && 지훈이 불과 같거나 먼저 도착한 경우
+                if(distF[nx][ny] > 0 && distJ[cur.x][cur.y]+1 >= distF[nx][ny]) continue;  // 이미 불이 지나갔던 자리일때 && 지훈이 불보다 같거나 느리게 도착한 경우
 
                 quJ.offer(new Point(nx,ny));
                 distJ[nx][ny] = distJ[cur.x][cur.y] + 1;
