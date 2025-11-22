@@ -4,6 +4,7 @@ import java.util.*;
 // - 문제 Tip :
 // 선수(정점)의 수가 최대 100명이므로, O(V^3) = O(1000000) 연산 횟수로서
 // 플로이드 워셜 알고리즘으로 최대 0.01초 안에 충분히 풀이가 가능함.
+// - 또다른 풀이법 : https://kerobero.tistory.com/24
 
 class Solution {
     public static int[][] board = new int[102][102];  // dp 의미
@@ -33,6 +34,16 @@ class Solution {
             }
         }
         
+        // - 과거 버전 -
+        // int answer = 0;
+        // for(int i=1; i<=n; i++) {
+        //     int cnt = 0;
+        //     for(int j=1; j<=n; j++) {
+        //         if(board[i][j] != 0) cnt++;
+        //     }
+        //     if(cnt == n-1) answer++;  // 본인 이외의 모든 정점과 순위를 매길 수 있는 경우
+        // }
+        // - 최적화 버전 -
         int answer = 0;
         for(int i=1; i<=n; i++) {
             boolean isCanRank = true;
