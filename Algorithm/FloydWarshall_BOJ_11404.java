@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-// [ 플로이드 워셜 알고리즘 (Floyd-Warshall Algorithm) with DP ]
+// [ 플로이드 워셜 알고리즘 (Floyd-Warshall Algorithm) with DP - 기초 ]
 // - 개념 특징 :
 // 그래프(인접 행렬)의 모든 정점에서 출발하여, 다른 모든 정점까지의 최단 경로를 구하는 알고리즘이다.
 // 다익스트라와 달리 '가중치가 음수인 간선'이 있어도 동작하지만, 사이클 내 모든 가중치 합이 음수가 되는 '음수 사이클'이 없어야만 한다.

@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-// [ 매개변수 탐색 (Parametric Search) with 이분 탐색 - min 아닌 max 결정함수 방식 응용 ]
+// [ 매개변수 탐색 (Parametric Search) with 이분 탐색 - min 아닌 max 결정함수 문제 (응용) ]
 
 public class BinarySearch_ParametricSearch_BOJ_6236 {
     public static int n, m;

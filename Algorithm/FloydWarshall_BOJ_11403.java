@@ -1,10 +1,11 @@
 import java.util.*;
 import java.io.*;
 
-// - 알고리즘: 플로이드 워셜 (단, 가중치 없이 모든 정점끼리의 이동 가능여부만 판단.)
+// [ 플로이드 워셜 알고리즘 (Floyd-Warshall Algorithm) with DP - 가중치 없이 이동 가능여부만 판단하는 문제 (기초) ]
+// - 문제 Tip : 이 문제에서는 int[][] 말고 boolean[][]으로도 풀이 가능함.
 
-public class BOJ_11403 {
-    public static int[][] board = new int[102][102];  // dp
+public class FloydWarshall_BOJ_11403 {
+    public static int[][] board = new int[102][102];  // dp 의미
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

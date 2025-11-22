@@ -1,24 +1,26 @@
 import java.util.*;
 
-// - 알고리즘 : 플로이드 워셜 (단, 가중치 없이 모든 정점끼리의 이동 및 순위 가능여부만 판단.)
+// [ 플로이드 워셜 알고리즘 (Floyd-Warshall Algorithm) with DP - 가중치 없이 이동 가능여부만 판단하는 문제 (응용) ]
 // - 문제 Tip :
 // 선수(정점)의 수가 최대 100명이므로, O(V^3) = O(1000000) 연산 횟수로서
 // 플로이드 워셜 알고리즘으로 최대 0.01초 안에 충분히 풀이가 가능함.
-// - 또다른 풀이법 : https://kerobero.tistory.com/24
+// - 또다른 풀이법 :
+// https://kerobero.tistory.com/24
+// 이는 int[][] 대신 boolean[][]을 이용한 풀이법임.
 
 class Solution {
     public static int[][] board = new int[102][102];  // dp 의미
     
     public int solution(int n, int[][] results) {  // n == v 의미
         for(int[] result : results) {
-            // 0: 본인vs본인 or 측정불가, 1: 승리, -1: 패배
+            // 0: 본인vs본인 OR 측정불가, 1: 승리, -1: 패배
             board[result[0]][result[1]] = 1;
             board[result[1]][result[0]] = -1;  // 비록 졌으나, 순위는 매길수있기에 표기 필요함.
         }
         
         for(int viaNode=1; viaNode<=n; viaNode++) {
-            for(int i=1; i<=n; i++) {
-                for(int j=1; j<=n; j++) {
+            for(int i=1; i<=n; i++) {  // v
+                for(int j=1; j<=n; j++) {  // v
                     int startToVia = board[i][viaNode];
                     int viaToEnd = board[viaNode][j];
                     
@@ -61,7 +63,7 @@ class Solution {
     }
 }
 
-public class PGS_순위 {
+public class FloydWarshall_PGS_순위 {
     public static void main(String[] args) {
         // 메인함수 코드 생략
         return;
